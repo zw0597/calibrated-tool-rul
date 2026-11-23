@@ -1,0 +1,21 @@
+\begin{table}[!htbp]
+\centering
+\caption{Tool-level jackknife+ (Eq.~\eqref{eq:jplus}) compared with the two-layer conformal step of the main text. Pooled: all windows of every calibration tool, weight 1 per tool (no guarantee); subsampled: one random window per calibration tool, averaged over 400 draws, approximate guarantee $1-2\alpha=80\%$, defined only for $m\ge9$. $<$80\%: tools covered on fewer than 80\% of their windows.}
+\label{tab:Sjack}
+\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llccccccccc}
+\toprule
+ & & \multicolumn{3}{c}{PHM2010} & \multicolumn{3}{c}{NUAA} & \multicolumn{3}{c}{NASA milling}\\
+\cmidrule(lr){3-5}\cmidrule(lr){6-8}\cmidrule(lr){9-11}
+Scenario & Calibration & PICP & NIS & $<$80\% & PICP & NIS & $<$80\% & PICP & NIS & $<$80\%\\
+\midrule
+periodic & two-layer (main text) & 93.9 & 40.4 & 0 & 92.4 & 147.4 & 2 & 91.7 & 95.0 & 2\\
+ & jackknife+, pooled & 94.2 & 36.7 & 0 & 90.8 & 148.8 & 2 & 91.1 & 95.7 & 2\\
+ & jackknife+, subsampled & -- & -- & -- & -- & -- & -- & 93.9 & 207.6 & 1\\
+\midrule
+mount-only & two-layer (main text) & 92.4 & 43.2 & 1 & 89.6 & 141.6 & 1 & 89.7 & 145.9 & 2\\
+ & jackknife+, pooled & 94.2 & 38.7 & 0 & 88.0 & 152.5 & 2 & 90.3 & 142.9 & 2\\
+ & jackknife+, subsampled & -- & -- & -- & -- & -- & -- & 93.8 & 700.0 & 2\\
+\bottomrule
+\end{tabular}
+\end{table}

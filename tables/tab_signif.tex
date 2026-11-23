@@ -1,0 +1,26 @@
+\begin{table}[!tbp]
+\centering
+\caption{Paired comparison of the proposed method with each baseline, pooled over the 27 test tools (periodic inspections): mean difference Proposed $-$ baseline in percentage points, 95\% bootstrap confidence interval over tools (10\,000 resamples) and two-sided Wilcoxon signed-rank $p$-value with Holm correction over the baselines of each endpoint. NIS: normalised interval score of the calibrated intervals of the proposed method against the intervals of the baseline (QR has no calibrated version; its NIS row is omitted); late-life error: MAE over the second half of life normalised by the tool life. Errors are normalised by the tool life, so that tools of different datasets are comparable. Negative values favour the proposed method.}
+\label{tab:signif}
+\scriptsize\setlength{\tabcolsep}{2.6pt}
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{2}{c}{$\Delta$NIS (pp, primary)} & \multicolumn{2}{c}{$\Delta n$MAE (pp)} & \multicolumn{2}{c}{$\Delta$ late-life error (pp)}\\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+Baseline & mean [95\% CI] & $p_{\rm Holm}$ & mean [95\% CI] & $p_{\rm Holm}$ & mean [95\% CI] & $p_{\rm Holm}$\\
+\midrule
+DE & $-$83.5 [$-$140.9, $-$35.9] & 0.002 & $-$16.1 [$-$31.7, $-$5.7] & 0.015 & $-$24.8 [$-$42.3, $-$11.7] & $<$0.001\\
+DE+ & $-$32.3 [$-$96.4, 19.6] & 0.594 & $-$3.0 [$-$10.7, 4.1] & 1.000 & $-$7.3 [$-$14.9, $-$0.5] & 0.042\\
+MCD & $-$78.0 [$-$145.7, $-$30.0] & 0.002 & $-$15.3 [$-$32.3, $-$4.7] & 0.015 & $-$23.6 [$-$41.8, $-$10.8] & $<$0.001\\
+QR & -- & -- & $-$18.6 [$-$38.3, $-$6.4] & 0.008 & $-$26.2 [$-$46.6, $-$11.8] & 0.001\\
+CQR & $-$189.9 [$-$277.3, $-$119.9] & $<$0.001 & $-$18.6 [$-$37.0, $-$6.3] & 0.008 & $-$26.2 [$-$46.3, $-$11.6] & 0.001\\
+CQR+ & $-$147.5 [$-$229.7, $-$71.5] & 0.005 & $-$4.8 [$-$13.8, 3.1] & 1.000 & $-$9.2 [$-$18.8, $-$1.4] & 0.042\\
+Wiener & $-$1699.5 [$-$2768.4, $-$802.4] & $<$0.001 & $-$19.2 [$-$35.3, $-$6.8] & 0.015 & $-$22.9 [$-$38.9, $-$10.2] & $<$0.001\\
+Wiener-C & $-$98.5 [$-$199.8, $-$25.2] & 0.001 & $-$3.7 [$-$13.3, 3.8] & 1.000 & $-$9.4 [$-$18.1, $-$2.9] & 0.032\\
+Wiener-Net & $-$1148.7 [$-$1949.0, $-$525.0] & $<$0.001 & $-$17.5 [$-$31.5, $-$6.9] & 0.006 & $-$20.6 [$-$34.5, $-$9.0] & 0.001\\
+PF & $-$1927.7 [$-$2771.7, $-$1213.3] & $<$0.001 & $-$50.6 [$-$88.6, $-$20.0] & 0.011 & $-$54.2 [$-$95.9, $-$23.4] & 0.001\\
+PF-C & $-$174.6 [$-$306.0, $-$76.4] & $<$0.001 & $-$7.7 [$-$17.8, 0.6] & 1.000 & $-$11.3 [$-$23.0, $-$2.6] & 0.042\\
+Law & $-$67.8 [$-$129.0, $-$19.1] & $<$0.001 & $-$6.7 [$-$12.8, $-$1.8] & 0.108 & $-$12.8 [$-$23.1, $-$4.7] & 0.005\\
+\bottomrule
+\end{tabular}
+\end{table}

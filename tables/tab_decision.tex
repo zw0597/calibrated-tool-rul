@@ -1,0 +1,25 @@
+\begin{table}[!tbp]
+\centering
+\caption{Replacement decisions (periodic inspections). The tool is replaced at the first evaluation window at which the lower bound of the 90\% interval falls below a lead time $L$, a fraction of the mean life of the training tools; a failure is a tool that reaches $V^\ast$ before replacement, and the wasted life is the remaining life at replacement, in \% of the tool life, averaged over the 27 tools. Failures are counted over all 27 tools.}
+\label{tab:decision}
+\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{2}{c}{$L=5\%$} & \multicolumn{2}{c}{$L=10\%$} & \multicolumn{2}{c}{$L=20\%$}\\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+Method & failures & wasted (\%) & failures & wasted (\%) & failures & wasted (\%)\\
+\midrule
+DE & 5 & 51.6 & 2 & 59.0 & 1 & 70.1\\
+DE+ & 7 & 25.6 & 2 & 33.5 & 0 & 43.6\\
+CQR & 5 & 56.3 & 2 & 67.3 & 0 & 77.5\\
+CQR+ & 1 & 37.7 & 0 & 48.5 & 0 & 59.5\\
+Wiener & 4 & 32.5 & 2 & 46.2 & 0 & 67.1\\
+Wiener-C & 6 & 22.9 & 3 & 33.3 & 1 & 45.6\\
+PF & 2 & 68.5 & 0 & 74.8 & 0 & 79.5\\
+PF-C & 3 & 68.8 & 3 & 69.3 & 2 & 73.9\\
+Law & 1 & 51.2 & 0 & 54.3 & 0 & 64.1\\
+Proposed-raw & 1 & 39.9 & 0 & 51.5 & 0 & 60.3\\
+Proposed & 1 & 44.7 & 0 & 52.7 & 0 & 62.1\\
+\bottomrule
+\end{tabular}
+\end{table}

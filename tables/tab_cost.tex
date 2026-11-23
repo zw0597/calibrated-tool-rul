@@ -1,0 +1,25 @@
+\begin{table}[!tbp]
+\centering
+\caption{Long-run cost rate of the lower-bound replacement rule of Table~\ref{tab:decision} (renewal-reward: planned replacement costs 1, a failure costs $r$; total cost divided by total used life over the 27 tools, relative to replacing every tool exactly at failure, so that 1 is ideal). Best: lowest cost rate over the lead times $L\in\{2.5,5,10,15,20,30\}\%$ (chosen in hindsight, equally for all methods), with the corresponding $L$.}
+\label{tab:cost}
+\footnotesize\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{3}{c}{$r=10$} & \multicolumn{3}{c}{$r=20$}\\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+Method & $L=5\%$ & $L=10\%$ & best ($L$) & $L=5\%$ & $L=10\%$ & best ($L$)\\
+\midrule
+DE & 4.88 & 3.28 & 3.11 (15\%) & 8.26 & 4.74 & 3.98 (15\%)\\
+DE+ & 4.36 & 2.30 & 1.51 (15\%) & 7.76 & 3.32 & 1.51 (15\%)\\
+CQR & 5.10 & 4.24 & 4.24 (10\%) & 8.64 & 6.12 & 4.48 (15\%)\\
+CQR+ & 1.92 & 1.76 & 1.76 (10\%) & 2.45 & 1.76 & 1.76 (10\%)\\
+Wiener & 3.58 & 3.32 & 3.32 (10\%) & 5.86 & 4.79 & 3.42 (20\%)\\
+Wiener-C & 3.53 & 2.61 & 2.03 (20\%) & 6.15 & 4.06 & 2.59 (20\%)\\
+PF & 5.14 & 5.61 & 4.80 (2.5\%) & 7.42 & 5.61 & 5.61 (10\%)\\
+PF-C & 4.87 & 4.92 & 3.89 (30\%) & 7.57 & 7.65 & 4.97 (30\%)\\
+Law & 1.93 & 1.53 & 1.53 (10\%) & 2.47 & 1.53 & 1.53 (10\%)\\
+Proposed-raw & 1.76 & 1.50 & 1.50 (10\%) & 2.24 & 1.50 & 1.50 (10\%)\\
+Proposed & 1.86 & 1.54 & 1.54 (10\%) & 2.37 & 1.54 & 1.54 (10\%)\\
+\bottomrule
+\end{tabular}
+\end{table}

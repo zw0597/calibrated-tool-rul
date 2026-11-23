@@ -1,0 +1,76 @@
+\begin{table}[!tbp]
+\centering
+\caption{RUL prediction with the mount-only inspection. Metrics are averaged over test tools; bold marks the best value per dataset and column (PICP and NMPIW excluded, since neither is a score on its own; LinEx excluded because of its divergent extrapolation). DE+, QR+: deep regressors that also receive the mounting wear and the inspections; CQR+: QR+ with the two-layer conformal step; Wiener-C, PF-C: Wiener and particle-filter models with condition-dependent priors; Wiener-Net, PF-Net: Wiener and general-path particle-filter models that treat the network wear estimates as independent measurements; PF: the particle filter with inspections only (Section~\ref{sec:baselines}).}
+\label{tab:main_none}
+\scriptsize\setlength{\tabcolsep}{4.5pt}\renewcommand{\arraystretch}{0.93}
+\begin{tabular}{lrrrrrrr}
+\toprule
+Method & $n$MAE (\%) & RMSE (s) & MAE$_{\rm late}$ (s) & $\alpha$--$\lambda$ & PICP (\%) & NMPIW (\%) & NIS (\%)\\
+\midrule
+\multicolumn{8}{@{}l}{\emph{PHM2010 (3 tools, 1 condition)}}\\
+Pop & 13.20 & 141 & 136 & 0.56 & -- & -- & --\\
+DE & 6.99 & 83 & 71 & 0.89 & 43.2 & 8.7 & 80.7\\
+DE+ & 12.01 & 133 & 138 & 0.67 & 1.7 & 8.7 & 161.0\\
+MCD & 7.07 & 84 & 69 & 0.89 & 45.4 & 10.1 & 76.8\\
+QR & 6.55 & \textbf{78} & 63 & 0.89 & 41.1 & 7.9 & 82.0\\
+QR+ & 11.41 & 127 & 123 & 0.78 & 1.6 & 7.5 & 160.2\\
+CQR & 6.55 & \textbf{78} & 63 & 0.89 & 64.1 & 35.7 & 75.0\\
+CQR+ & 11.41 & 127 & 123 & 0.78 & 81.9 & 71.4 & 86.2\\
+LinEx & 79.93 & 1309 & 698 & 0.11 & -- & -- & --\\
+Wiener & 9.03 & 106 & 102 & 0.78 & 100.0 & 55.6 & 55.6\\
+Wiener-C & 8.94 & 105 & 101 & 0.78 & 100.0 & 55.7 & 55.7\\
+Wiener-Net & 20.18 & 249 & 234 & 0.22 & 31.2 & 29.9 & 174.4\\
+PF & 7.69 & 86 & 85 & 0.89 & 100.0 & 35.5 & \textbf{35.5}\\
+PF-C & 7.73 & 86 & 86 & 0.89 & 100.0 & 67.0 & 67.0\\
+PF-Net & 10.30 & 133 & 75 & 0.89 & 16.9 & 10.5 & 114.7\\
+Law & 16.49 & 180 & 181 & 0.44 & 100.0 & 111.0 & 111.0\\
+Proposed-raw & \textbf{6.34} & 82 & \textbf{61} & \textbf{1.00} & 92.4 & 32.7 & 36.8\\
+Proposed & \textbf{6.34} & 82 & \textbf{61} & \textbf{1.00} & 92.4 & 39.1 & 43.2\\
+Proposed, QR+ evidence$^\ddagger$ & 9.31 & 123 & 104 & 0.78 & 84.0 & 72.9 & 90.5\\
+\midrule
+\multicolumn{8}{@{}l}{\emph{NUAA (9 tools, 9 conditions)}}\\
+Pop & 84.09 & 283 & 239 & 0.22 & -- & -- & --\\
+DE & 54.54 & 276 & 255 & 0.41 & 67.5 & 129.1 & 290.6\\
+DE+ & 27.05 & 154 & 148 & 0.37 & 41.9 & 32.2 & 423.2\\
+MCD & 54.50 & 268 & 242 & 0.41 & 66.9 & 128.0 & 295.3\\
+QR & 59.08 & 288 & 266 & 0.41 & 70.3 & 145.1 & 293.9\\
+QR+ & 26.91 & 155 & 148 & 0.22 & 32.5 & 17.9 & 622.8\\
+CQR & 59.08 & 288 & 266 & 0.41 & 88.0 & 323.7 & 364.9\\
+CQR+ & 26.91 & 155 & 148 & 0.22 & 80.3 & 172.7 & 232.3\\
+LinEx & 115.18 & 885 & 682 & 0.04 & -- & -- & --\\
+Wiener & 32.87 & 205 & 165 & 0.19 & 88.9 & 293.8 & 319.1\\
+Wiener-C & 25.40 & \textbf{132} & 123 & \textbf{0.44} & 88.9 & 147.8 & 244.2\\
+Wiener-Net & 43.57 & 422 & 465 & 0.15 & 82.6 & 775.6 & 860.5\\
+PF & 25.05 & 212 & 140 & 0.22 & 100.0 & 1820.7 & 1820.7\\
+PF-C & \textbf{23.93} & 197 & 137 & 0.22 & 100.0 & 314.7 & 314.7\\
+PF-Net & 96.70 & 1338 & 1623 & 0.26 & 79.8 & 1227.2 & 1512.3\\
+Law & 32.14 & 256 & 155 & 0.11 & 100.0 & 223.4 & 223.4\\
+Proposed-raw & 31.36 & 236 & 119 & 0.15 & 83.6 & 87.4 & 132.1\\
+Proposed & 31.36 & 236 & 119 & 0.15 & 89.6 & 113.6 & 141.6\\
+Proposed, QR+ evidence$^\ddagger$ & 24.21 & 170 & \textbf{98} & 0.26 & 94.1 & 93.7 & \textbf{97.8}\\
+\midrule
+\multicolumn{8}{@{}l}{\emph{NASA milling (15 tools, 8 conditions)}}\\
+Pop & 112.52 & 1140 & 956 & 0.20 & -- & -- & --\\
+DE & 29.95 & 644 & 542 & 0.36 & 78.3 & 95.9 & 151.3\\
+DE+ & 25.66 & 371 & 315 & 0.40 & 78.9 & 65.6 & 122.2\\
+MCD & 28.58 & 614 & 503 & 0.38 & 80.7 & 101.5 & 139.4\\
+QR & 31.85 & 670 & 539 & 0.38 & 76.5 & 95.5 & 190.4\\
+QR+ & 27.18 & 368 & 312 & 0.36 & 66.7 & 56.9 & 176.5\\
+CQR & 31.85 & 670 & 539 & 0.38 & 91.1 & 256.6 & 299.4\\
+CQR+ & 27.18 & 368 & 312 & 0.36 & 89.2 & 220.5 & 254.5\\
+LinEx & 267.51 & 3333 & 2044 & 0.07 & -- & -- & --\\
+Wiener & 54.47 & 954 & 631 & 0.02 & 86.7 & 4223.0 & 4280.4\\
+Wiener-C & 23.36 & 347 & 322 & 0.40 & 93.3 & 156.8 & 221.1\\
+Wiener-Net & 49.51 & 903 & 545 & 0.04 & 78.2 & 2397.1 & 2509.3\\
+PF & 58.08 & 979 & 644 & 0.04 & 100.0 & 3002.6 & 3002.6\\
+PF-C & \textbf{19.98} & \textbf{286} & \textbf{270} & \textbf{0.47} & 100.0 & 149.0 & 149.0\\
+PF-Net & 55.80 & 973 & 665 & 0.24 & 88.7 & 2796.7 & 2871.4\\
+Law & 20.05 & 364 & 332 & 0.31 & 100.0 & 109.0 & \textbf{109.0}\\
+Proposed-raw & 21.62 & 408 & 324 & 0.44 & 87.8 & 77.2 & 116.4\\
+Proposed & 21.62 & 408 & 324 & 0.44 & 89.7 & 113.4 & 145.9\\
+Proposed, QR+ evidence$^\ddagger$ & 20.44 & 365 & 316 & 0.42 & 90.4 & 94.7 & 116.3\\
+Proposed (subsampled CP)$^\dagger$ & 21.62 & 408 & 324 & 0.44 & 93.8 & 730.5 & 749.9\\
+\bottomrule
+\multicolumn{8}{@{}p{0.95\linewidth}@{}}{\scriptsize $^\dagger$Conservative subsampled conformal step of Section~\ref{sec:conformal} (one random window per calibration tool, $Q$ = largest score for $m=14$, averaged over 400 draws); it can be formed only when $m\ge9$ and is therefore reported for NASA milling only. Its finite-sample guarantee (Proposition~5) holds for calibration tools held out from training; in the nested protocol used here its coverage is an empirical property. $^\ddagger$Calibrated framework with the QR+ ensemble as direct-RUL evidence (Section~\ref{sec:res_rul}).}\\
+\end{tabular}
+\end{table}

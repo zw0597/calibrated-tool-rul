@@ -1,0 +1,25 @@
+\begin{table}[!htbp]
+\centering
+\caption{Observation-model variants (raw posterior intervals before the conformal step). Correlated innovations: correlation estimated per fold as the median correlation of the normalised inner residuals of the two sources. Random intercept: $\rho_l=\psi^0_s+\psi_s\phi_s^l$ fitted by least squares to the residual autocorrelation at lags 1--10.}
+\label{tab:Svariants}
+\footnotesize\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{llccccccccc}
+\toprule
+ & & \multicolumn{3}{c}{PHM2010} & \multicolumn{3}{c}{NUAA} & \multicolumn{3}{c}{NASA milling}\\
+\cmidrule(lr){3-5}\cmidrule(lr){6-8}\cmidrule(lr){9-11}
+Scenario & Variant & $n$MAE & PICP & NIS & $n$MAE & PICP & NIS & $n$MAE & PICP & NIS\\
+\midrule
+periodic & Main model & 5.8 & 93.9 & 37.1 & 27.3 & 86.9 & 141.5 & 17.6 & 88.3 & 91.5\\
+ & $\delta_0$ with mean $-\epsilon$ (offset prior decoupled) & 6.7 & 92.9 & 40.5 & 27.9 & 86.5 & 142.7 & 18.1 & 87.2 & 89.8\\
+ & correlated increment and RUL bias innovations & 6.0 & 94.5 & 25.5 & 27.2 & 83.2 & 163.3 & 18.0 & 85.6 & 96.1\\
+ & tool-level random intercept + AR(1) + white error & 6.6 & 87.3 & 43.9 & 28.4 & 83.2 & 154.5 & 17.6 & 87.8 & 92.4\\
+ & random intercept and decoupled $\delta_0$ & 7.1 & 87.6 & 46.5 & 29.1 & 83.6 & 153.3 & 18.3 & 86.1 & 93.0\\
+\midrule
+mount-only & Main model & 6.3 & 92.4 & 36.8 & 31.4 & 83.6 & 132.1 & 21.6 & 87.8 & 116.4\\
+ & $\delta_0$ with mean $-\epsilon$ (offset prior decoupled) & 7.8 & 92.1 & 40.0 & 31.9 & 82.9 & 133.7 & 22.4 & 85.6 & 116.6\\
+ & correlated increment and RUL bias innovations & 6.3 & 94.8 & 24.2 & 31.6 & 77.9 & 159.6 & 20.3 & 87.6 & 102.8\\
+ & tool-level random intercept + AR(1) + white error & 6.3 & 87.6 & 43.0 & 32.6 & 74.5 & 157.9 & 21.8 & 87.2 & 117.7\\
+ & random intercept and decoupled $\delta_0$ & 7.2 & 86.8 & 45.3 & 33.1 & 75.1 & 156.2 & 22.7 & 83.2 & 119.5\\
+\bottomrule
+\end{tabular}
+\end{table}

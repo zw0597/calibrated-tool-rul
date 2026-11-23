@@ -1,0 +1,56 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the article below."
+title: "Calibrated remaining-useful-life prediction of cutting tools under persistent deep-network errors: code and processed results"
+authors:
+  - family-names: Liu
+    given-names: Yadan
+    orcid: "https://orcid.org/0009-0007-4692-6852"
+  - family-names: Zeng
+    given-names: Zhongkai
+    orcid: "https://orcid.org/0009-0005-0406-0697"
+  - family-names: Chen
+    given-names: Yang
+    orcid: "https://orcid.org/0000-0001-8934-0738"
+  - family-names: Zhang
+    given-names: Peikai
+    orcid: "https://orcid.org/0009-0005-7810-5552"
+  - family-names: Du
+    given-names: Shaoyi
+    orcid: "https://orcid.org/0000-0002-7092-0596"
+  - family-names: Tian
+    given-names: Zhiqiang
+    orcid: "https://orcid.org/0000-0002-3669-3748"
+  - family-names: Zeng
+    given-names: Wei
+    orcid: "https://orcid.org/0000-0002-8353-8265"
+license: MIT
+repository-code: "https://github.com/zw0597/calibrated-tool-rul"
+version: "1.3.0"
+date-released: "2026-11-22"
+preferred-citation:
+  type: article
+  title: "Calibrated remaining-useful-life prediction of cutting tools under persistent deep-network errors"
+  authors:
+    - family-names: Liu
+      given-names: Yadan
+      orcid: "https://orcid.org/0009-0007-4692-6852"
+    - family-names: Zeng
+      given-names: Zhongkai
+      orcid: "https://orcid.org/0009-0005-0406-0697"
+    - family-names: Chen
+      given-names: Yang
+      orcid: "https://orcid.org/0000-0001-8934-0738"
+    - family-names: Zhang
+      given-names: Peikai
+      orcid: "https://orcid.org/0009-0005-7810-5552"
+    - family-names: Du
+      given-names: Shaoyi
+      orcid: "https://orcid.org/0000-0002-7092-0596"
+    - family-names: Tian
+      given-names: Zhiqiang
+      orcid: "https://orcid.org/0000-0002-3669-3748"
+    - family-names: Zeng
+      given-names: Wei
+      orcid: "https://orcid.org/0000-0002-8353-8265"
+  journal: "Reliability Engineering & System Safety"
+  status: submitted

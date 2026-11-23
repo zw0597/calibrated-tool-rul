@@ -1,0 +1,20 @@
+\begin{table}[!tbp]
+\centering
+\caption{Wear-increment estimation error (MAE, $\mu$m; mean $\pm$ s.d. over LOTO test tools) for alternative evidence networks. The network used in the framework is evaluated per member of its five-member ensemble; the alternatives are averaged over three (PHM2010) or one (NUAA) independently trained models.}
+\label{tab:wear}
+\small
+\begin{tabular}{lccc}
+\toprule
+Network & PHM2010 & NUAA & NASA milling$^\ast$\\
+\midrule
+1D-CNN + ref.\ stats + condition (used) & 17.2 $\pm$ 6.7 & 63.2 $\pm$ 16.7 & 320.7 $\pm$ 681.2\\
+BiLSTM + ref.\ stats + condition & 15.7 $\pm$ 3.6 & 53.2 $\pm$ 16.4 & --\\
+Transformer + ref.\ stats + condition & 14.9 $\pm$ 3.1 & 62.5 $\pm$ 16.5 & --\\
+ref.\ stats + condition (no window branch) & 18.2 $\pm$ 5.7 & 59.6 $\pm$ 17.9 & --\\
+1D-CNN + condition (no ref.\ stats) & 19.7 $\pm$ 9.3 & 59.5 $\pm$ 18.9 & --\\
+1D-CNN + ref.\ stats (no condition) & 17.9 $\pm$ 8.2 & 69.2 $\pm$ 23.1 & --\\
+1D-CNN only & 19.7 $\pm$ 9.7 & 57.6 $\pm$ 18.6 & --\\
+\bottomrule
+\multicolumn{4}{@{}p{0.97\linewidth}@{}}{\scriptsize $^\ast$Only the network used in the framework was trained for NASA milling. The mean is dominated by tool M12, whose increment estimate jumps to about 3 mm from its second run on (MAE 2857 $\mu$m); median 132 $\mu$m, 140 $\pm$ 70 $\mu$m without M12.}\\
+\end{tabular}
+\end{table}

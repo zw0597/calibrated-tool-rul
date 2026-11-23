@@ -1,0 +1,28 @@
+\begin{table}[!htbp]
+\centering
+\caption{Robustness of the persistence estimates of Proposition~2 (inner leave-one-tool-out residuals pooled over the outer folds). RUL residuals have exact targets $T-t$; wear-measurement times: windows at which the per-pass label changes (PHM2010) or runs with a measured flank wear (NASA milling); NUAA labels are continuous in time, so only thinning is possible.}
+\label{tab:Spersist}
+\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lllccc}
+\toprule
+Dataset & Evidence & Residuals & $\kappa_s$ & $\phi_s$ & $\psi_s$\\
+\midrule
+PHM2010 & increment & all evaluation windows & 3.61 & 0.99 & 0.98\\
+PHM2010 & increment & wear-measurement times only & 3.74 & 0.99 & 0.98\\
+PHM2010 & increment & every fifth window & 3.60 & 0.96 & 0.98\\
+PHM2010 & RUL & all evaluation windows & 3.39 & 0.98 & 0.98\\
+PHM2010 & RUL & every fifth window & 3.40 & 0.99 & 0.93\\
+\midrule
+NUAA & increment & all evaluation windows & 3.89 & 0.98 & 0.90\\
+NUAA & increment & every fifth window & 4.41 & 0.86 & 0.93\\
+NUAA & RUL & all evaluation windows & 2.47 & 0.96 & 0.92\\
+NUAA & RUL & every fifth window & 2.34 & 0.92 & 0.80\\
+\midrule
+NASA milling & increment & all evaluation windows & 2.31 & 0.70 & 0.83\\
+NASA milling & increment & wear-measurement times only & 2.36 & 0.62 & 0.87\\
+NASA milling & increment & every fifth window & 2.86 & 0.59 & 0.33\\
+NASA milling & RUL & all evaluation windows & 3.49 & 0.95 & 0.63\\
+NASA milling & RUL & every fifth window & 1.57 & 0.50 & 0.57\\
+\bottomrule
+\end{tabular}
+\end{table}

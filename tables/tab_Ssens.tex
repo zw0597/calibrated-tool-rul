@@ -1,0 +1,27 @@
+\begin{table}[!htbp]
+\centering
+\caption{Sensitivity of the proposed method to its fixed constants (periodic inspections; one constant changed at a time, all other settings as in the main text). Upper block: raw posterior intervals. Lower block: calibrated intervals for different time constants $T_0$ of the log-time transform of the conformal score (the point estimate does not depend on $T_0$). For $\sigma_I$ both the simulated inspection noise and the value assumed by the filter are changed.}
+\label{tab:Ssens}
+\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lccccccccc}
+\toprule
+ & \multicolumn{3}{c}{PHM2010} & \multicolumn{3}{c}{NUAA} & \multicolumn{3}{c}{NASA milling}\\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-10}
+Setting & $n$MAE & PICP & NIS & $n$MAE & PICP & NIS & $n$MAE & PICP & NIS\\
+\midrule
+Paper setting (raw intervals) & 5.8 & 93.9 & 37.1 & 27.3 & 86.9 & 141.5 & 17.6 & 88.3 & 91.5\\
+floor of $s_\theta$: 0.10 (paper 0.15) & 5.3 & 93.7 & 36.4 & 27.3 & 86.9 & 141.5 & 17.6 & 88.3 & 91.5\\
+floor of $s_\theta$: 0.25 & 7.1 & 94.2 & 38.2 & 27.3 & 86.9 & 141.5 & 17.6 & 88.3 & 88.4\\
+floor of $\hat s^R_k$: 2 s (paper 5 s) & 5.8 & 93.9 & 37.1 & 27.2 & 87.8 & 138.3 & 17.6 & 88.3 & 91.7\\
+floor of $\hat s^R_k$: 10 s & 5.8 & 93.9 & 37.1 & 27.3 & 86.1 & 142.9 & 17.7 & 88.3 & 91.1\\
+upper clip of $\psi_s$: 0.95 (paper 0.98) & 5.6 & 94.3 & 36.8 & 27.3 & 86.5 & 142.3 & 17.6 & 88.3 & 91.5\\
+upper clip of $\psi_s$: 0.995 & 5.9 & 93.7 & 37.2 & 27.3 & 86.9 & 141.5 & 17.6 & 88.3 & 91.5\\
+inspection noise $\sigma_I$: 2.5 $\mu$m (paper 5 $\mu$m) & 6.6 & 94.2 & 37.7 & 27.5 & 86.5 & 146.3 & 17.6 & 88.3 & 90.9\\
+inspection noise $\sigma_I$: 10 $\mu$m & 6.3 & 92.8 & 38.0 & 28.0 & 86.6 & 130.4 & 17.8 & 87.8 & 90.4\\
+\midrule
+calibrated, $T_0=10$ s & -- & 93.9 & 40.5 & -- & 92.4 & 147.9 & -- & 91.7 & 95.4\\
+calibrated, $T_0=30$ s (paper) & -- & 93.9 & 40.4 & -- & 92.4 & 147.4 & -- & 91.7 & 95.0\\
+calibrated, $T_0=100$ s & -- & 93.9 & 40.0 & -- & 91.3 & 147.9 & -- & 91.1 & 94.4\\
+\bottomrule
+\end{tabular}
+\end{table}
