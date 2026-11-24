@@ -58,7 +58,7 @@ Training-window stride changed from 50 to 200 frames (non-overlapping 4-s window
 instead of about 1,600), because with stride 50 one network took more than 15 minutes on the shared machine and the
 819 MATWI networks would not finish in reasonable time. Test windows, labels, V\*, the time axis and all other settings are unchanged.
 
-## 6. Amendment 2 (25 November 2026, about 00:40, before any MATWI RUL result of the framework or of any baseline was seen)
+## 6. Amendment 2 (25 November 2026, 00:15, before any MATWI RUL result of the framework or of any baseline was seen)
 
 The inner-fold DE+ ensembles used only for choosing the stacking weight and for the conformal scores of the stacked predictor
 are trained with 2 members on MATWI instead of 5 (624 instead of 1,560 networks), as all other inner ensembles on MATWI and
