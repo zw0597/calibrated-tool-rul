@@ -1,26 +1,32 @@
-\begin{table}[!tbp]
+\begin{table*}[!tbp]
 \centering
-\caption{Paired comparison of the proposed method with each baseline, pooled over the 27 test tools (periodic inspections): mean difference Proposed $-$ baseline in percentage points, 95\% bootstrap confidence interval over tools (10\,000 resamples) and two-sided Wilcoxon signed-rank $p$-value with Holm correction over the baselines of each endpoint. NIS: normalised interval score of the calibrated intervals of the proposed method against the intervals of the baseline (QR has no calibrated version; its NIS row is omitted); late-life error: MAE over the second half of life normalised by the tool life. Errors are normalised by the tool life, so that tools of different datasets are comparable. Negative values favour the proposed method.}
+\caption{Paired comparison of the proposed (stacked, calibrated) method with each alternative over the 40 test tools of the four tool datasets (periodic inspections): mean difference Proposed $-$ alternative in percentage points with a dataset-stratified bootstrap 95\% confidence interval (10\,000 resamples); $p$-value of the van Elteren test (signed-rank test stratified by dataset) with Holm correction over the 16 alternatives of each endpoint; number of tools on which the proposed method is better. NIS: interval score (raw intervals for DE, DE+, MCD, QR and QR+; DE+CP, CQR, CQR+ and Wiener-AR use the two-layer conformal step); late-life error: MAE over the second half of life normalised by the tool life. Negative values favour the proposed method. $^\ast$Ablation, not part of the Holm family (unadjusted $p$). The 27 tools of the development datasets were used to design the method; the $p$-values are descriptive.}
 \label{tab:signif}
 \scriptsize\setlength{\tabcolsep}{2.6pt}
-\begin{tabular}{lcccccc}
+\begin{tabular}{lccccccccc}
 \toprule
- & \multicolumn{2}{c}{$\Delta$NIS (pp, primary)} & \multicolumn{2}{c}{$\Delta n$MAE (pp)} & \multicolumn{2}{c}{$\Delta$ late-life error (pp)}\\
-\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
-Baseline & mean [95\% CI] & $p_{\rm Holm}$ & mean [95\% CI] & $p_{\rm Holm}$ & mean [95\% CI] & $p_{\rm Holm}$\\
+ & \multicolumn{3}{c}{$\Delta$NIS (pp, primary)} & \multicolumn{3}{c}{$\Delta n$MAE (pp)} & \multicolumn{3}{c}{$\Delta$ late-life error (pp)}\\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-10}
+Alternative & mean [95\% CI] & $p_{\rm Holm}$ & wins & mean [95\% CI] & $p_{\rm Holm}$ & wins & mean [95\% CI] & $p_{\rm Holm}$ & wins\\
 \midrule
-DE & $-$83.5 [$-$140.9, $-$35.9] & 0.002 & $-$16.1 [$-$31.7, $-$5.7] & 0.015 & $-$24.8 [$-$42.3, $-$11.7] & $<$0.001\\
-DE+ & $-$32.3 [$-$96.4, 19.6] & 0.594 & $-$3.0 [$-$10.7, 4.1] & 1.000 & $-$7.3 [$-$14.9, $-$0.5] & 0.042\\
-MCD & $-$78.0 [$-$145.7, $-$30.0] & 0.002 & $-$15.3 [$-$32.3, $-$4.7] & 0.015 & $-$23.6 [$-$41.8, $-$10.8] & $<$0.001\\
-QR & -- & -- & $-$18.6 [$-$38.3, $-$6.4] & 0.008 & $-$26.2 [$-$46.6, $-$11.8] & 0.001\\
-CQR & $-$189.9 [$-$277.3, $-$119.9] & $<$0.001 & $-$18.6 [$-$37.0, $-$6.3] & 0.008 & $-$26.2 [$-$46.3, $-$11.6] & 0.001\\
-CQR+ & $-$147.5 [$-$229.7, $-$71.5] & 0.005 & $-$4.8 [$-$13.8, 3.1] & 1.000 & $-$9.2 [$-$18.8, $-$1.4] & 0.042\\
-Wiener & $-$1699.5 [$-$2768.4, $-$802.4] & $<$0.001 & $-$19.2 [$-$35.3, $-$6.8] & 0.015 & $-$22.9 [$-$38.9, $-$10.2] & $<$0.001\\
-Wiener-C & $-$98.5 [$-$199.8, $-$25.2] & 0.001 & $-$3.7 [$-$13.3, 3.8] & 1.000 & $-$9.4 [$-$18.1, $-$2.9] & 0.032\\
-Wiener-Net & $-$1148.7 [$-$1949.0, $-$525.0] & $<$0.001 & $-$17.5 [$-$31.5, $-$6.9] & 0.006 & $-$20.6 [$-$34.5, $-$9.0] & 0.001\\
-PF & $-$1927.7 [$-$2771.7, $-$1213.3] & $<$0.001 & $-$50.6 [$-$88.6, $-$20.0] & 0.011 & $-$54.2 [$-$95.9, $-$23.4] & 0.001\\
-PF-C & $-$174.6 [$-$306.0, $-$76.4] & $<$0.001 & $-$7.7 [$-$17.8, 0.6] & 1.000 & $-$11.3 [$-$23.0, $-$2.6] & 0.042\\
-Law & $-$67.8 [$-$129.0, $-$19.1] & $<$0.001 & $-$6.7 [$-$12.8, $-$1.8] & 0.108 & $-$12.8 [$-$23.1, $-$4.7] & 0.005\\
+Framework alone$^\ast$ & $-$0.3 [$-$10.3, 12.7] & 0.549 & 19 & $-$1.2 [$-$4.3, 2.9] & 0.265 & 19 & 1.2 [$-$1.9, 4.9] & 0.894 & 15\\
+\midrule
+DE & $-$246 [$-$650, 26.6] & 0.003 & 31 & $-$43.5 [$-$80.9, $-$11.7] & 0.006 & 28 & $-$48.5 [$-$82.9, $-$18.8] & 0.001 & 31\\
+DE+ & $-$45.8 [$-$153, 42.0] & 0.794 & 14 & $-$15.4 [$-$30.4, $-$4.2] & 0.083 & 26 & $-$17.5 [$-$34.8, $-$4.5] & 0.002 & 29\\
+DE+CP & $-$184 [$-$291, $-$92.4] & 0.010 & 31 & $-$15.4 [$-$30.6, $-$4.3] & 0.083 & 26 & $-$17.5 [$-$35.4, $-$4.5] & 0.002 & 29\\
+MCD & $-$390 [$-$909, $-$1.2] & 0.001 & 30 & $-$48.9 [$-$93.7, $-$11.5] & 0.005 & 28 & $-$52.4 [$-$94.6, $-$15.8] & 0.002 & 32\\
+QR & $-$341 [$-$678, $-$70.5] & $<$0.001 & 31 & $-$42.0 [$-$77.3, $-$12.3] & 0.005 & 29 & $-$47.1 [$-$79.9, $-$18.0] & 0.002 & 31\\
+QR+ & $-$281 [$-$619, $-$54.8] & 0.193 & 23 & $-$25.7 [$-$54.6, $-$5.8] & 0.071 & 25 & $-$28.3 [$-$58.5, $-$6.6] & 0.002 & 32\\
+CQR & $-$1005 [$-$1550, $-$510] & $<$0.001 & 38 & $-$42.0 [$-$77.1, $-$11.9] & 0.005 & 29 & $-$47.1 [$-$79.6, $-$18.0] & 0.002 & 31\\
+CQR+ & $-$527 [$-$802, $-$290] & $<$0.001 & 35 & $-$25.7 [$-$54.6, $-$5.8] & 0.071 & 25 & $-$28.3 [$-$58.7, $-$6.6] & 0.002 & 32\\
+Wiener & $-$2864 [$-$5269, $-$1282] & $<$0.001 & 37 & $-$29.0 [$-$64.9, $-$6.1] & 0.004 & 32 & $-$30.8 [$-$67.1, $-$7.0] & 0.002 & 30\\
+Wiener-C & $-$5087 [$-$12297, $-$1127] & $<$0.001 & 38 & $-$24.5 [$-$49.6, $-$4.7] & 0.083 & 23 & $-$25.0 [$-$51.8, $-$5.0] & 0.002 & 29\\
+Wiener-Net & $-$2626 [$-$4937, $-$1066] & $<$0.001 & 37 & $-$27.7 [$-$62.7, $-$5.5] & 0.002 & 33 & $-$29.1 [$-$64.1, $-$6.2] & 0.002 & 30\\
+Wiener-AR & $-$4570 [$-$9010, $-$1820] & $<$0.001 & 39 & $-$28.7 [$-$62.7, $-$6.1] & 0.002 & 33 & $-$30.9 [$-$67.7, $-$7.4] & 0.002 & 30\\
+PF & $-$3259 [$-$4729, $-$1967] & $<$0.001 & 38 & $-$219 [$-$387, $-$91.6] & $<$0.001 & 35 & $-$218 [$-$406, $-$67.7] & $<$0.001 & 35\\
+PF-C & $-$1609 [$-$3020, $-$500] & $<$0.001 & 38 & $-$125 [$-$235, $-$41.5] & $<$0.001 & 32 & $-$117 [$-$257, $-$18.7] & 0.002 & 30\\
+PF-Net & $-$3360 [$-$4849, $-$2054] & $<$0.001 & 39 & $-$235 [$-$407, $-$105] & $<$0.001 & 39 & $-$238 [$-$433, $-$83.4] & $<$0.001 & 33\\
+Law & $-$124 [$-$179, $-$72.1] & $<$0.001 & 32 & $-$20.5 [$-$36.3, $-$8.2] & 0.015 & 29 & $-$23.1 [$-$37.0, $-$11.9] & $<$0.001 & 33\\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}

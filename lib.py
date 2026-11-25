@@ -2,9 +2,9 @@ import numpy as np, torch, torch.nn as nn, pickle
 import os
 torch.set_num_threads(int(os.environ.get('NT','2')))
 D=pickle.load(open('data/win.pkl','rb'))
-TH={'PHM':0.15,'NUAA':0.16,'MILL':0.45}
+TH={'PHM':0.15,'NUAA':0.16,'MILL':0.45,'MATWI':0.09}
 # optional override of the wear limit (V* sensitivity study, v1.1); defaults reproduce the paper
-for _ds in ('PHM','NUAA','MILL'):
+for _ds in ('PHM','NUAA','MILL','MATWI'):
     if os.environ.get('TH_'+_ds): TH[_ds]=float(os.environ['TH_'+_ds])
 if os.environ.get('TH_MILL'):
     for _d in D.values():

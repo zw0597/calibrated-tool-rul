@@ -1,0 +1,33 @@
+\begin{table}[!tbp]
+\centering
+\caption{Run-to-failure tools used in this study. Conditions: PHM2010, one condition (spindle speed 10\,400 r/min, feed rate 1555 mm/min, radial depth 0.125 mm, axial depth 0.2 mm); NUAA, spindle speed $n$ (r/min), feed per tooth $f_z$ (mm/tooth), axial depth $a_p$ (mm); NASA milling, workpiece material (CI: cast iron, St: steel), feed $f$ (mm/rev) and depth of cut $a_p$ (mm); MATWI, workpiece (CK: CK45 steel, SS: AISI 304 stainless steel), cutting speed $V_c$ (m/min) and feed per tooth $f_z$ (mm); $^\ast$conditions not recorded, imputed by the median of the other CK45 sets. $v_0$: wear at mounting (first record); $T$: time to reach $V^\ast$; $K^{\rm ev}$: number of evaluation windows before failure.}
+\label{tab:data}
+\scriptsize\setlength{\tabcolsep}{3.2pt}
+\begin{tabular}{llcrrrr@{\hspace{10pt}}llcrrrr}
+\toprule
+Data & Tool & Condition & $v_0$ & $T$ & Rec. & $K^{\rm ev}$ & Data & Tool & Condition & $v_0$ & $T$ & Rec. & $K^{\rm ev}$\\
+ & & & ($\mu$m) & (s) & (s) & & & & & ($\mu$m) & (s) & (s) & \\
+\midrule
+PHM & c1 & -- & 50 & 1177 & 1375 & 291 & Mill & M10 & CI/0.25/1.50 & 0 & 2160 & 3420 & 6\\
+PHM & c4 & -- & 35 & 1177 & 1395 & 291 & Mill & M11 & CI/0.25/0.75 & 0 & 4608 & 6300 & 17\\
+PHM & c6 & -- & 64 & 963 & 1371 & 237 & Mill & M12 & CI/0.50/0.75 & 50 & 3300 & 4440 & 10\\
+NUAA & W1 & 1750/0.045/2.5 & 118 & 501 & 2896 & 45 & Mill & M13 & St/0.25/0.75 & 100 & 1255 & 2700 & 6\\
+NUAA & W2 & 1800/0.045/3.0 & 60 & 1323 & 1709 & 128 & Mill & M14 & St/0.50/0.75 & 90 & 864 & 1440 & 5\\
+NUAA & W3 & 1850/0.045/3.5 & 60 & 1076 & 1273 & 103 & Mill & M15 & St/0.25/1.50 & 150 & 715 & 1140 & 3\\
+NUAA & W4 & 1750/0.050/3.0 & 77 & 788 & 3045 & 74 & Mill & M16 & St/0.50/1.50 & 240 & 401 & 540 & 4\\
+NUAA & W5 & 1800/0.050/3.5 & 150 & 125 & 650 & 7 & MATWI & X01 & CK/174/.048$^\ast$ & 30 & 805 & 2870 & 23\\
+NUAA & W6 & 1850/0.050/2.5 & 52 & 689 & 1214 & 64 & MATWI & X02 & CK/120/.080 & 50 & 321 & 3148 & 8\\
+NUAA & W7 & 1750/0.055/3.5 & 69 & 373 & 788 & 32 & MATWI & X03 & CK/150/.050 & 30 & 3007 & 6189 & 48\\
+NUAA & W8 & 1800/0.055/2.5 & 68 & 590 & 3322 & 54 & MATWI & X04 & CK/174/.050 & 45 & 1814 & 3298 & 51\\
+NUAA & W9 & 1850/0.055/3.0 & 70 & 462 & 561 & 41 & MATWI & X05 & CK/174/.040 & 75 & 402 & 2574 & 8\\
+Mill & M01 & CI/0.50/1.50 & 0 & 2460 & 2880 & 12 & MATWI & X06 & CK/174/.040 & 30 & 3542 & 5375 & 91\\
+Mill & M02 & CI/0.50/0.75 & 80 & 3708 & 4320 & 11 & MATWI & X08 & CK/174/.048 & 30 & 1902 & 3488 & 52\\
+Mill & M03 & CI/0.25/0.75 & 0 & 4533 & 4860 & 12 & MATWI & X09 & CK/174/.048 & 30 & 2765 & 3574 & 76\\
+Mill & M04 & CI/0.25/1.50 & 80 & 2207 & 2340 & 5 & MATWI & X11 & CK/174/.043 & 60 & 276 & 3743 & 5\\
+Mill & M05 & St/0.50/1.50 & 0 & 560 & 900 & 3 & MATWI & X12 & SS/120/.050 & 60 & 301 & 2006 & 6\\
+Mill & M07 & St/0.25/0.75 & 0 & 1120 & 1260 & 5 & MATWI & X13 & SS/150/.050 & 45 & 257 & 1596 & 6\\
+Mill & M08 & St/0.50/0.75 & 0 & 550 & 720 & 4 & MATWI & X14 & SS/135/.060 & 30 & 3325 & 4488 & 107\\
+Mill & M09 & CI/0.50/1.50 & 0 & 1960 & 2760 & 5 & MATWI & X17 & SS/150/.030 & 30 & 133 & 1995 & 3\\
+\bottomrule
+\end{tabular}
+\end{table}

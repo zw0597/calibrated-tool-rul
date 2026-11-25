@@ -1,0 +1,61 @@
+\begin{table}[!tbp]
+\centering
+\caption{RUL prediction with periodic inspections (every 200 s for PHM2010 and 300 s for NUAA). Metrics are averaged over test tools; bold: best value per dataset and column (PICP and NMPIW excluded, since neither is a score on its own; LinEx excluded because of its divergent extrapolation). Proposed: framework stacked with DE+ (Section~\ref{sec:stack}) and calibrated; Framework alone: the unstacked framework ($a=1$). DE+, QR+: deep regressors that also receive the mounting wear and the inspections; DE+CP, CQR+: DE+ and QR+ with the two-layer conformal step; Wiener-AR: Wiener-Net with the AR(1) bias state of the error model and the two-layer conformal step; Wiener-C, PF-C: condition-dependent priors; Wiener-Net, PF-Net: network wear estimates treated as independent measurements; PF: particle filter with inspections only (Section~\ref{sec:baselines}). $^\dagger$Subsampled conformal step of Section~\ref{sec:conformal} (one random window per calibration tool, 400 draws), possible only for $m\ge9$ calibration tools. $^\ddagger$Framework with the QR+ ensemble as direct-RUL evidence (counts the inspections twice; not computed for MATWI).}
+\label{tab:main_insp_a}
+\scriptsize\setlength{\tabcolsep}{4.5pt}\renewcommand{\arraystretch}{0.93}
+\begin{tabular}{lrrrrrrr}
+\toprule
+Method & $n$MAE (\%) & RMSE (s) & MAE$_{\rm late}$ (s) & $\alpha$--$\lambda$ & PICP (\%) & NMPIW (\%) & NIS (\%)\\
+\midrule
+\multicolumn{8}{@{}l}{\emph{PHM2010 (3 tools, 1 condition)}}\\
+Pop & 13.20 & 141 & 136 & 0.56 & -- & -- & --\\
+DE & 6.99 & 83 & 71 & 0.89 & 43.2 & 8.7 & 80.7\\
+DE+ & 8.40 & 97 & 96 & 0.78 & 26.5 & 9.1 & 93.7\\
+DE+CP & 8.40 & 97 & 96 & 0.78 & 62.9 & 38.7 & 100.4\\
+MCD & 7.07 & 84 & 69 & 0.89 & 45.4 & 10.1 & 76.8\\
+QR & 6.55 & 78 & 63 & 0.89 & 41.1 & 7.9 & 82.0\\
+QR+ & 7.28 & 86 & 75 & 0.89 & 13.1 & 7.6 & 81.9\\
+CQR & 6.55 & 78 & 63 & 0.89 & 64.1 & 35.7 & 75.0\\
+CQR+ & 7.28 & 86 & 75 & 0.89 & 92.8 & 39.4 & 45.6\\
+LinEx & 79.93 & 1309 & 698 & 0.11 & -- & -- & --\\
+Wiener & 14.22 & 191 & 123 & 0.44 & 57.6 & 30.9 & 116.5\\
+Wiener-C & 14.18 & 190 & 123 & 0.44 & 57.6 & 30.9 & 116.1\\
+Wiener-Net & 19.76 & 245 & 227 & 0.22 & 31.9 & 30.0 & 163.4\\
+Wiener-AR & 17.88 & 231 & 195 & 0.44 & 85.5 & 118.0 & 158.8\\
+PF & 8.46 & 104 & 72 & 0.89 & 70.5 & 21.1 & 39.6\\
+PF-C & 14.35 & 183 & 129 & 0.44 & 70.4 & 33.7 & 100.0\\
+PF-Net & 10.05 & 131 & 67 & 0.89 & 13.8 & 10.2 & 112.2\\
+Law & 15.16 & 188 & 127 & 0.44 & 94.7 & 61.4 & 68.6\\
+Framework alone, raw & 5.82 & 79 & \textbf{48} & \textbf{1.00} & 93.9 & 33.1 & 37.1\\
+Framework alone & 5.82 & 79 & \textbf{48} & \textbf{1.00} & 93.9 & 36.4 & 40.4\\
+Framework, QR+ evidence$^\ddagger$ & 6.56 & 88 & 63 & 0.89 & 92.4 & 58.3 & 63.6\\
+Proposed, raw & \textbf{5.58} & \textbf{71} & 53 & \textbf{1.00} & 91.3 & 27.3 & \textbf{31.7}\\
+\textbf{Proposed} & \textbf{5.58} & \textbf{71} & 53 & \textbf{1.00} & 91.7 & 28.2 & 32.5\\
+\midrule
+\multicolumn{8}{@{}l}{\emph{NUAA (9 tools, 9 conditions)}}\\
+Pop & 84.09 & 283 & 239 & 0.22 & -- & -- & --\\
+DE & 54.54 & 276 & 255 & 0.41 & 67.5 & 129.1 & 290.6\\
+DE+ & \textbf{15.19} & 116 & 89 & \textbf{0.59} & 84.8 & 56.8 & \textbf{87.0}\\
+DE+CP & \textbf{15.19} & 116 & 89 & \textbf{0.59} & 90.1 & 73.1 & 92.6\\
+MCD & 54.50 & 268 & 242 & 0.41 & 66.9 & 128.0 & 295.3\\
+QR & 59.08 & 288 & 266 & 0.41 & 70.3 & 145.1 & 293.9\\
+QR+ & 17.39 & \textbf{112} & 83 & 0.44 & 80.2 & 57.4 & 94.5\\
+CQR & 59.08 & 288 & 266 & 0.41 & 88.0 & 323.7 & 364.9\\
+CQR+ & 17.39 & \textbf{112} & 83 & 0.44 & 95.6 & 113.4 & 119.2\\
+LinEx & 115.18 & 885 & 682 & 0.04 & -- & -- & --\\
+Wiener & 32.83 & 212 & 196 & 0.26 & 85.2 & 256.0 & 325.6\\
+Wiener-C & 27.83 & 170 & 174 & 0.48 & 85.6 & 130.8 & 256.6\\
+Wiener-Net & 32.78 & 255 & 241 & 0.22 & 88.5 & 251.3 & 310.1\\
+Wiener-AR & 33.01 & 244 & 232 & 0.19 & 91.4 & 454.0 & 482.8\\
+PF & 62.32 & 882 & 934 & 0.30 & 87.5 & 1325.8 & 1418.1\\
+PF-C & 25.45 & 224 & 189 & 0.26 & 97.6 & 306.2 & 313.0\\
+PF-Net & 122.96 & 1365 & 1549 & 0.22 & 77.6 & 967.6 & 1873.8\\
+Law & 43.67 & 391 & 386 & 0.11 & 92.8 & 297.7 & 340.2\\
+Framework alone, raw & 27.28 & 224 & 75 & 0.33 & 86.9 & 94.9 & 141.5\\
+Framework alone & 27.28 & 224 & 75 & 0.33 & 92.4 & 115.7 & 147.4\\
+Framework, QR+ evidence$^\ddagger$ & 21.63 & 163 & 67 & 0.33 & 91.8 & 91.4 & 113.1\\
+Proposed, raw & 16.33 & 139 & \textbf{65} & 0.48 & 87.8 & 69.7 & 102.4\\
+\textbf{Proposed} & 16.33 & 139 & \textbf{65} & 0.48 & 93.6 & 82.5 & 103.6\\
+\bottomrule
+\end{tabular}
+\end{table}

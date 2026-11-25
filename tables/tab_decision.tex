@@ -1,6 +1,6 @@
 \begin{table}[!tbp]
 \centering
-\caption{Replacement decisions (periodic inspections). The tool is replaced at the first evaluation window at which the lower bound of the 90\% interval falls below a lead time $L$, a fraction of the mean life of the training tools; a failure is a tool that reaches $V^\ast$ before replacement, and the wasted life is the remaining life at replacement, in \% of the tool life, averaged over the 27 tools. Failures are counted over all 27 tools.}
+\caption{Replacement decisions (periodic inspections, 40 tools of the four tool datasets). The tool is replaced at the first evaluation window at which the lower bound of the 90\% interval falls below a lead time $L$, a fraction of the mean life of the training tools; a failure is a tool that reaches $V^\ast$ before replacement; wasted life: remaining life at replacement in \% of the tool life, averaged over the 40 tools.}
 \label{tab:decision}
 \footnotesize\setlength{\tabcolsep}{4pt}
 \begin{tabular}{lcccccc}
@@ -9,17 +9,20 @@
 \cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
 Method & failures & wasted (\%) & failures & wasted (\%) & failures & wasted (\%)\\
 \midrule
-DE & 5 & 51.6 & 2 & 59.0 & 1 & 70.1\\
-DE+ & 7 & 25.6 & 2 & 33.5 & 0 & 43.6\\
-CQR & 5 & 56.3 & 2 & 67.3 & 0 & 77.5\\
-CQR+ & 1 & 37.7 & 0 & 48.5 & 0 & 59.5\\
-Wiener & 4 & 32.5 & 2 & 46.2 & 0 & 67.1\\
-Wiener-C & 6 & 22.9 & 3 & 33.3 & 1 & 45.6\\
-PF & 2 & 68.5 & 0 & 74.8 & 0 & 79.5\\
-PF-C & 3 & 68.8 & 3 & 69.3 & 2 & 73.9\\
-Law & 1 & 51.2 & 0 & 54.3 & 0 & 64.1\\
-Proposed-raw & 1 & 39.9 & 0 & 51.5 & 0 & 60.3\\
-Proposed & 1 & 44.7 & 0 & 52.7 & 0 & 62.1\\
+Pop (time-based) & 21 & 17.1 & 21 & 18.4 & 18 & 22.6\\
+DE & 9 & 51.5 & 6 & 56.9 & 4 & 66.9\\
+DE+ & 11 & 34.5 & 4 & 42.1 & 2 & 49.8\\
+DE+CP & 6 & 43.3 & 1 & 50.8 & 0 & 60.7\\
+CQR & 6 & 60.0 & 2 & 69.9 & 0 & 78.1\\
+CQR+ & 2 & 46.9 & 0 & 57.2 & 0 & 67.4\\
+Wiener & 5 & 47.7 & 3 & 57.4 & 0 & 72.0\\
+Wiener-C & 6 & 37.4 & 3 & 47.7 & 1 & 57.8\\
+Wiener-AR & 4 & 57.0 & 1 & 69.5 & 1 & 80.1\\
+PF & 2 & 74.0 & 0 & 78.2 & 0 & 81.4\\
+PF-C & 3 & 73.7 & 3 & 74.2 & 2 & 77.6\\
+Law & 1 & 61.1 & 0 & 64.1 & 0 & 71.0\\
+Framework alone & 1 & 57.6 & 0 & 63.3 & 0 & 69.7\\
+Proposed & 3 & 40.5 & 0 & 50.9 & 0 & 65.2\\
 \bottomrule
 \end{tabular}
 \end{table}

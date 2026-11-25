@@ -1,30 +1,31 @@
 \begin{table*}[!tbp]
 \centering
-\caption{Ablation study (periodic inspections; raw posterior intervals, before conformal calibration).}
+\caption{Ablation study (periodic inspections; raw intervals, before conformal calibration). Rows below the second are variants of the framework alone. --: not computed.}
 \label{tab:ablation}
-\footnotesize\setlength{\tabcolsep}{3.6pt}
-\begin{tabular}{lccccccccc}
+\scriptsize\setlength{\tabcolsep}{2.6pt}
+\begin{tabular}{lcccccccccccc}
 \toprule
- & \multicolumn{3}{c}{PHM2010} & \multicolumn{3}{c}{NUAA} & \multicolumn{3}{c}{NASA milling}\\
-\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-10}
-Variant & $n$MAE & PICP & NIS & $n$MAE & PICP & NIS & $n$MAE & PICP & NIS\\
- & (\%) & (\%) & (\%) & (\%) & (\%) & (\%) & (\%) & (\%) & (\%)\\
+ & \multicolumn{3}{c}{PHM2010} & \multicolumn{3}{c}{NUAA} & \multicolumn{3}{c}{NASA milling} & \multicolumn{3}{c}{MATWI}\\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-10}\cmidrule(lr){11-13}
+Variant & $n$MAE & PICP & NIS & $n$MAE & PICP & NIS & $n$MAE & PICP & NIS & $n$MAE & PICP & NIS\\
 \midrule
-Proposed (full, raw intervals) & 5.8 & 93.9 & 37.1 & 27.3 & 86.9 & 141.5 & 17.6 & 88.3 & 91.5\\
-w/o effective-age offset ($\epsilon\equiv0$) & 9.7 & 81.4 & 47.7 & 25.3 & 90.5 & 141.2 & 21.6 & 89.2 & 116.1\\
-w/o hypothesis averaging (single filter) & 5.0 & 95.0 & 34.7 & 27.7 & 78.1 & 155.1 & 17.1 & 84.7 & 83.5\\
-extended-Taylor prior only & -- & -- & -- & 26.9 & 83.0 & 144.2 & 17.7 & 87.8 & 89.9\\
-pooled prior only & -- & -- & -- & 26.9 & 88.5 & 144.9 & 23.0 & 88.2 & 144.2\\
-w/o wear-increment evidence & 6.6 & 95.0 & 36.1 & 29.5 & 85.6 & 158.2 & 17.4 & 91.1 & 77.4\\
-w/o direct-RUL evidence & 10.7 & 88.4 & 66.3 & 47.3 & 89.1 & 365.2 & 18.0 & 91.7 & 107.7\\
-w/o persistent bias ($\psi_s\to0.05$) & 6.3 & 87.5 & 33.5 & 29.6 & 75.2 & 215.0 & 17.8 & 85.9 & 93.6\\
-w/o model discrepancy $\delta$ & 9.8 & 43.8 & 77.7 & 57.9 & 51.8 & 659.6 & 27.4 & 38.7 & 291.3\\
-single quantile network instead of ensemble & 5.9 & 94.7 & 36.9 & 26.7 & 88.3 & 147.0 & 18.2 & 87.1 & 96.2\\
-nominal-path RUL (discrepancy not propagated) & 6.5 & 72.3 & 45.0 & 22.6 & 87.5 & 159.5 & 18.0 & 86.7 & 92.7\\
-w/o small-sample predictive scale (Eq.~\eqref{eq:predscale}) & 6.7 & 93.4 & 37.4 & 27.3 & 86.0 & 142.6 & 17.6 & 88.3 & 91.0\\
-plain pseudo-BMA (no Bayesian bootstrap) & -- & -- & -- & 27.6 & 86.8 & 143.4 & 17.6 & 88.3 & 91.2\\
-uniform weights over prior structures & -- & -- & -- & 26.9 & 87.8 & 143.1 & 18.6 & 87.6 & 118.7\\
-law + inspections only (Law) & 15.2 & 94.7 & 68.6 & 43.7 & 92.8 & 340.2 & 18.0 & 96.1 & 95.8\\
+Proposed: stacked with DE+, raw & 5.6 & 91.3 & 31.7 & 16.3 & 87.8 & 102.4 & 16.9 & 88.2 & 95.3 & 58.0 & 74.6 & 406.8\\
+Framework alone ($a=1$), raw & 5.8 & 93.9 & 37.1 & 27.3 & 86.9 & 141.5 & 17.6 & 88.3 & 91.5 & 53.3 & 81.4 & 409.1\\
+\midrule
+w/o effective-age offset ($\epsilon\equiv0$) & 9.7 & 81.4 & 47.7 & 25.3 & 90.5 & 141.2 & 21.6 & 89.2 & 116.1 & 67.6 & 73.9 & 450.7\\
+w/o hypothesis averaging (single filter) & 5.0 & 95.0 & 34.7 & 27.7 & 78.1 & 155.1 & 17.1 & 84.7 & 83.5 & 54.4 & 73.8 & 387.7\\
+extended-Taylor prior only & -- & -- & -- & 26.9 & 83.0 & 144.2 & 17.7 & 87.8 & 89.9 & 53.5 & 80.8 & 422.8\\
+pooled prior only & -- & -- & -- & 26.9 & 88.5 & 144.9 & 23.0 & 88.2 & 144.2 & 54.1 & 78.9 & 409.7\\
+w/o wear-increment evidence & 6.6 & 95.0 & 36.1 & 29.5 & 85.6 & 158.2 & 17.4 & 91.1 & 77.4 & 56.1 & 77.9 & 422.8\\
+w/o direct-RUL evidence & 10.7 & 88.4 & 66.3 & 47.3 & 89.1 & 365.2 & 18.0 & 91.7 & 107.7 & 103.6 & 85.0 & 831.2\\
+w/o persistent bias ($\psi_s\to0.05$) & 6.3 & 87.5 & 33.5 & 29.6 & 75.2 & 215.0 & 17.8 & 85.9 & 93.6 & 49.6 & 75.9 & 420.4\\
+w/o model discrepancy $\delta$ & 9.8 & 43.8 & 77.7 & 57.9 & 51.8 & 659.6 & 27.4 & 38.7 & 291.3 & 126.9 & 55.3 & 958.7\\
+single quantile network instead of ensemble & 5.9 & 94.7 & 36.9 & 26.7 & 88.3 & 147.0 & 18.2 & 87.1 & 96.2 & 52.0 & 82.1 & 388.3\\
+nominal-path RUL (discrepancy not propagated) & 6.5 & 72.3 & 45.0 & 22.6 & 87.5 & 159.5 & 18.0 & 86.7 & 92.7 & -- & -- & --\\
+w/o small-sample predictive scale (Eq.~\eqref{eq:predscale}) & 6.7 & 93.4 & 37.4 & 27.3 & 86.0 & 142.6 & 17.6 & 88.3 & 91.0 & -- & -- & --\\
+plain pseudo-BMA (no Bayesian bootstrap) & -- & -- & -- & 27.6 & 86.8 & 143.4 & 17.6 & 88.3 & 91.2 & -- & -- & --\\
+uniform weights over prior structures & -- & -- & -- & 26.9 & 87.8 & 143.1 & 18.6 & 87.6 & 118.7 & -- & -- & --\\
+law + inspections only (Law) & 15.2 & 94.7 & 68.6 & 43.7 & 92.8 & 340.2 & 18.0 & 96.1 & 95.8 & 98.8 & 86.5 & 818.2\\
 \bottomrule
 \end{tabular}
 \end{table*}

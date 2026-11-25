@@ -1,0 +1,20 @@
+\begin{table}[!htbp]
+\centering
+\caption{Weight $1-a$ of DE+ in the stacked predictor (Eq.~\eqref{eq:stack}), chosen in the inner folds of every outer fold by the smallest mean inner $n$MAE: mean, range and the values per test tool.}
+\label{tab:Sstack}
+\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llccp{7.2cm}}
+\toprule
+Dataset & Scenario & mean & range & per tool\\
+\midrule
+PHM2010 & periodic & 0.20 & 0.0--0.5 & c1 0.5, c4 0.0, c6 0.1\\
+ & mount-only & 0.07 & 0.0--0.2 & c1 0.2, c4 0.0, c6 0.0\\
+NUAA & periodic & 0.62 & 0.4--1.0 & W1 0.5, W2 0.4, W3 0.7, W4 0.6, W5 1.0, W6 0.7, W7 0.6, W8 0.5, W9 0.6\\
+ & mount-only & 0.57 & 0.3--0.9 & W1 0.9, W2 0.5, W3 0.5, W4 0.3, W5 0.9, W6 0.5, W7 0.6, W8 0.4, W9 0.5\\
+NASA milling & periodic & 0.19 & 0.1--0.3 & M01 0.3, M02 0.2, M03 0.2, M04 0.2, M05 0.2, M07 0.2, M08 0.1, M09 0.1, M10 0.2, M11 0.3, M12 0.2, M13 0.1, M14 0.1, M15 0.2, M16 0.2\\
+ & mount-only & 0.23 & 0.0--0.4 & M01 0.4, M02 0.2, M03 0.2, M04 0.4, M05 0.4, M07 0.2, M08 0.0, M09 0.3, M10 0.4, M11 0.3, M12 0.3, M13 0.2, M14 0.2, M15 0.0, M16 0.0\\
+MATWI & periodic & 0.14 & 0.0--0.7 & X01 0.7, X02 0.0, X03 0.5, X04 0.0, X05 0.3, X06 0.0, X08 0.2, X09 0.0, X11 0.0, X12 0.0, X13 0.0, X14 0.0, X17 0.1\\
+ & mount-only & 0.00 & 0.0--0.0 & X01 0.0, X02 0.0, X03 0.0, X04 0.0, X05 0.0, X06 0.0, X08 0.0, X09 0.0, X11 0.0, X12 0.0, X13 0.0, X14 0.0, X17 0.0\\
+\bottomrule
+\end{tabular}
+\end{table}

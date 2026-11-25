@@ -1,0 +1,62 @@
+\begin{table}[!tbp]
+\centering
+\caption{RUL prediction with periodic inspections (every 600 s for NASA milling and 160 s for MATWI); notation as in Table~\ref{tab:main_insp_a}. MATWI was evaluated once, under a protocol published before any RUL result (Section~\ref{sec:res_matwi}).}
+\label{tab:main_insp_b}
+\scriptsize\setlength{\tabcolsep}{4.5pt}\renewcommand{\arraystretch}{0.93}
+\begin{tabular}{lrrrrrrr}
+\toprule
+Method & $n$MAE (\%) & RMSE (s) & MAE$_{\rm late}$ (s) & $\alpha$--$\lambda$ & PICP (\%) & NMPIW (\%) & NIS (\%)\\
+\midrule
+\multicolumn{8}{@{}l}{\emph{NASA milling (15 tools, 8 conditions)}}\\
+Pop & 112.52 & 1140 & 956 & 0.20 & -- & -- & --\\
+DE & 29.95 & 644 & 542 & 0.36 & 78.3 & 95.9 & 151.3\\
+DE+ & 29.75 & 485 & 315 & 0.36 & 70.6 & 63.9 & 178.8\\
+DE+CP & 29.75 & 485 & 315 & 0.36 & 85.6 & 159.1 & 207.6\\
+MCD & 28.58 & 614 & 503 & 0.38 & 80.7 & 101.5 & 139.4\\
+QR & 31.85 & 670 & 539 & 0.38 & 76.5 & 95.5 & 190.4\\
+QR+ & 31.95 & 475 & 311 & 0.42 & 66.2 & 64.7 & 239.4\\
+CQR & 31.85 & 670 & 539 & 0.38 & 91.1 & 256.6 & 299.4\\
+CQR+ & 31.95 & 475 & 311 & 0.42 & 89.4 & 324.3 & 376.4\\
+LinEx & 267.51 & 3333 & 2044 & 0.07 & -- & -- & --\\
+Wiener & 47.20 & 720 & 416 & 0.27 & 80.7 & 2959.6 & 3032.0\\
+Wiener-C & 22.31 & 326 & 250 & 0.40 & 87.3 & 120.6 & 191.7\\
+Wiener-Net & 43.01 & 698 & 365 & 0.31 & 80.0 & 1959.1 & 2040.4\\
+Wiener-AR & 45.72 & 711 & 398 & 0.31 & 88.3 & 4244.8 & 4272.4\\
+PF & 87.13 & 2847 & 1407 & 0.20 & 71.3 & 2339.0 & 2802.7\\
+PF-C & 30.86 & 1048 & 706 & 0.40 & 76.6 & 129.3 & 298.1\\
+PF-Net & 85.94 & 2880 & 1419 & 0.20 & 65.3 & 2273.6 & 2829.7\\
+Law & 17.96 & \textbf{299} & 222 & 0.44 & 96.1 & 88.4 & 95.8\\
+Framework alone, raw & 17.63 & 301 & 170 & 0.60 & 88.3 & 69.3 & \textbf{91.5}\\
+Framework alone & 17.63 & 301 & 170 & 0.60 & 91.7 & 74.7 & 95.0\\
+Framework, QR+ evidence$^\ddagger$ & 18.07 & 325 & 173 & 0.58 & 90.4 & 84.8 & 104.7\\
+Proposed, raw & \textbf{16.91} & 312 & \textbf{165} & \textbf{0.64} & 88.2 & 68.5 & 95.3\\
+\textbf{Proposed} & \textbf{16.91} & 312 & \textbf{165} & \textbf{0.64} & 90.0 & 75.9 & 97.2\\
+Framework alone, subsampled CP$^\dagger$ & 17.63 & 301 & 170 & 0.60 & 93.7 & 185.8 & 201.0\\
+\midrule
+\multicolumn{8}{@{}l}{\emph{MATWI, frozen evaluation (13 tools, 10 conditions, 2 materials)}}\\
+Pop & 261.72 & 1137 & 935 & 0.03 & -- & -- & --\\
+DE & 150.09 & 955 & 751 & 0.13 & 52.9 & 278.8 & 1161.7\\
+DE+ & 90.88 & 653 & 499 & 0.15 & 51.0 & 192.5 & 650.9\\
+DE+CP & 90.88 & 653 & 499 & 0.15 & 92.0 & 1005.9 & 1036.9\\
+MCD & 168.20 & 1030 & 814 & 0.10 & 45.0 & 251.1 & 1615.2\\
+QR & 140.07 & 946 & 776 & 0.13 & 32.9 & 242.1 & 1404.7\\
+QR+ & 118.52 & 717 & 576 & 0.21 & 46.4 & 161.6 & 1303.5\\
+CQR & 140.07 & 946 & 776 & 0.13 & 92.7 & 3251.8 & 3274.9\\
+CQR+ & 118.52 & 717 & 576 & 0.21 & 87.0 & 1844.0 & 1892.7\\
+LinEx & 243.98 & 1838 & 972 & 0.05 & -- & -- & --\\
+Wiener & 99.03 & 670 & 390 & 0.18 & 90.7 & 5533.4 & 5860.1\\
+Wiener-C & 117.21 & 736 & 456 & 0.15 & 87.5 & 15969.6 & 16024.9\\
+Wiener-Net & 98.44 & 670 & 389 & 0.18 & 91.0 & 5947.1 & 6271.6\\
+Wiener-AR & 98.69 & 663 & 390 & 0.21 & 91.0 & 9435.2 & 9558.0\\
+PF & 617.25 & 3769 & 1717 & 0.23 & 59.3 & 6124.7 & 6601.8\\
+PF-C & 419.26 & 3023 & 1386 & 0.23 & 60.9 & 4713.2 & 5166.5\\
+PF-Net & 627.78 & 3659 & 1670 & 0.21 & 60.9 & 6101.1 & 6549.7\\
+Law & 98.84 & 689 & 494 & \textbf{0.26} & 86.5 & 775.7 & 818.2\\
+Framework alone, raw & \textbf{53.28} & 643 & \textbf{329} & 0.13 & 81.4 & 331.4 & 409.1\\
+Framework alone & \textbf{53.28} & 643 & \textbf{329} & 0.13 & 89.7 & 538.9 & 578.1\\
+Proposed, raw & 58.05 & \textbf{634} & 354 & 0.21 & 74.6 & 314.9 & \textbf{406.8}\\
+\textbf{Proposed} & 58.05 & \textbf{634} & 354 & 0.21 & 88.8 & 567.1 & 606.7\\
+Framework alone, subsampled CP$^\dagger$ & 53.28 & 643 & 329 & 0.13 & 92.4 & 714.9 & 743.7\\
+\bottomrule
+\end{tabular}
+\end{table}

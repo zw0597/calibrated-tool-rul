@@ -1,6 +1,6 @@
 \begin{table}[!tbp]
 \centering
-\caption{Long-run cost rate of the lower-bound replacement rule of Table~\ref{tab:decision} (renewal-reward: planned replacement costs 1, a failure costs $r$; total cost divided by total used life over the 27 tools, relative to replacing every tool exactly at failure, so that 1 is ideal). Best: lowest cost rate over the lead times $L\in\{2.5,5,10,15,20,30\}\%$ (chosen in hindsight, equally for all methods), with the corresponding $L$.}
+\caption{Long-run cost rate of the replacement rule of Table~\ref{tab:decision} (renewal-reward: planned replacement costs 1, a failure costs $r$; total cost divided by total used life over the 40 tools, relative to replacing every tool exactly at failure, so that 1 is ideal). Best: lowest cost rate over $L\in\{2.5,5,10,15,20,30\}\%$ (chosen in hindsight, equally for all methods), with the corresponding $L$.}
 \label{tab:cost}
 \footnotesize\setlength{\tabcolsep}{3.5pt}
 \begin{tabular}{lcccccc}
@@ -9,17 +9,20 @@
 \cmidrule(lr){2-4}\cmidrule(lr){5-7}
 Method & $L=5\%$ & $L=10\%$ & best ($L$) & $L=5\%$ & $L=10\%$ & best ($L$)\\
 \midrule
-DE & 4.88 & 3.28 & 3.11 (15\%) & 8.26 & 4.74 & 3.98 (15\%)\\
-DE+ & 4.36 & 2.30 & 1.51 (15\%) & 7.76 & 3.32 & 1.51 (15\%)\\
-CQR & 5.10 & 4.24 & 4.24 (10\%) & 8.64 & 6.12 & 4.48 (15\%)\\
-CQR+ & 1.92 & 1.76 & 1.76 (10\%) & 2.45 & 1.76 & 1.76 (10\%)\\
-Wiener & 3.58 & 3.32 & 3.32 (10\%) & 5.86 & 4.79 & 3.42 (20\%)\\
-Wiener-C & 3.53 & 2.61 & 2.03 (20\%) & 6.15 & 4.06 & 2.59 (20\%)\\
-PF & 5.14 & 5.61 & 4.80 (2.5\%) & 7.42 & 5.61 & 5.61 (10\%)\\
-PF-C & 4.87 & 4.92 & 3.89 (30\%) & 7.57 & 7.65 & 4.97 (30\%)\\
-Law & 1.93 & 1.53 & 1.53 (10\%) & 2.47 & 1.53 & 1.53 (10\%)\\
-Proposed-raw & 1.76 & 1.50 & 1.50 (10\%) & 2.24 & 1.50 & 1.50 (10\%)\\
-Proposed & 1.86 & 1.54 & 1.54 (10\%) & 2.37 & 1.54 & 1.54 (10\%)\\
+Pop (time-based) & 8.55 & 8.77 & 8.43 (2.5\%) & 16.39 & 16.81 & 16.16 (2.5\%)\\
+DE & 6.19 & 5.10 & 4.82 (15\%) & 10.79 & 8.35 & 7.36 (15\%)\\
+DE+ & 5.48 & 3.15 & 2.16 (30\%) & 9.81 & 4.81 & 2.16 (30\%)\\
+DE+CP & 3.90 & 2.38 & 2.25 (15\%) & 6.39 & 2.86 & 2.25 (15\%)\\
+CQR & 5.24 & 4.43 & 4.43 (10\%) & 8.58 & 5.96 & 5.00 (15\%)\\
+CQR+ & 2.55 & 2.21 & 2.21 (10\%) & 3.43 & 2.21 & 2.21 (10\%)\\
+Wiener & 4.56 & 4.66 & 4.56 (5\%) & 7.24 & 6.75 & 4.61 (20\%)\\
+Wiener-C & 3.60 & 2.94 & 2.59 (20\%) & 5.90 & 4.25 & 3.12 (20\%)\\
+Wiener-AR & 5.40 & 5.03 & 5.03 (10\%) & 8.25 & 6.06 & 6.06 (10\%)\\
+PF & 6.11 & 7.22 & 5.74 (2.5\%) & 8.21 & 7.22 & 7.22 (10\%)\\
+PF-C & 5.58 & 5.67 & 4.88 (2.5\%) & 8.07 & 8.21 & 5.88 (30\%)\\
+Law & 2.47 & 2.15 & 2.15 (10\%) & 2.97 & 2.15 & 2.15 (10\%)\\
+Framework alone & 2.41 & 2.19 & 2.19 (10\%) & 2.90 & 2.19 & 2.19 (10\%)\\
+Proposed & 2.69 & 1.85 & 1.85 (10\%) & 3.90 & 1.85 & 1.85 (10\%)\\
 \bottomrule
 \end{tabular}
 \end{table}

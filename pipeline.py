@@ -3,7 +3,7 @@ from lib import D, TH, tags, tfail
 from mc import register, theta_prior, make_insp
 from fuse import fuse, disc_params, QS
 ALPHA=0.1; TAU=30.0
-INSP={'PHM':200.0,'NUAA':300.0,'MILL':600.0}; SIG_I=0.005
+INSP={'PHM':200.0,'NUAA':300.0,'MILL':600.0,'MATWI':160.0}; SIG_I=0.005
 def rul_true(t): return tfail(t)-D[t]['tte']
 def emask(t):
     tt=D[t]['tte']; m=tt<tfail(t); m[:D[t].get('nb',5)]=False; return m

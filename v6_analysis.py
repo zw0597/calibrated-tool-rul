@@ -28,18 +28,24 @@ def cqrplus():
     pickle.dump(out, open('out/v6_cqrplus.pkl', 'wb')); return out
 
 
+_PK={}
+def _pk(f):
+    if f not in _PK: _PK[f]=pickle.load(open(f,'rb'))
+    return _PK[f]
 def preds(ds, t, scen, m):
     """predictive (R, lo, hi) of method m for tool t"""
     from make_tables_v5 import agg  # noqa (ensures loaders)
     import make_tables_v5 as M
+    if m == 'DE+CP': return _pk('out/v7_deplus_cp.pkl')[ds][t][scen]
+    if m in ('WienerAR', 'WienerARCP'): return _pk('out/v7_wiener_ar.pkl')[ds][t][scen][m]
     if m in ('DE+', 'QR+'): return M.DA[ds][t][scen][m]
-    if m == 'CQR+': return pickle.load(open('out/v6_cqrplus.pkl', 'rb'))[ds][t][scen]['CQR+']
-    if m == 'WienerC': return pickle.load(open('out/v6_wiener_cov.pkl', 'rb'))[ds][t][scen]
-    if m == 'PFC': return pickle.load(open('out/v6_pf_cov.pkl', 'rb'))[ds][t][scen + '_insponly']
+    if m == 'CQR+': return _pk('out/v6_cqrplus.pkl')[ds][t][scen]['CQR+']
+    if m == 'WienerC': return _pk('out/v6_wiener_cov.pkl')[ds][t][scen]
+    if m == 'PFC': return _pk('out/v6_pf_cov.pkl')[ds][t][scen + '_insponly']
     if m == 'PF': return M.GP[ds][t][scen + '_insponly']
     if m == 'PFNet': return M.GP[ds][t][scen]
     if m == 'WienerNetK': return M.HY[ds][t][scen][m]
-    O = pickle.load(open(f'out/rul2_{ds}.pkl', 'rb'))[t]
+    O = _pk(f'out/rul2_{ds}.pkl')[t]
     return O[scen][m] if m in O[scen] else O[m]
 
 
@@ -54,7 +60,7 @@ def decision(methods=('DE', 'DE+', 'CQR', 'CQR+', 'Wiener', 'WienerC', 'PF', 'PF
                 T_ = tags(ds)
                 for t in T_:
                     L = lead * np.mean([tfail(j) for j in T_ if j != t])
-                    p = preds(ds, t, scen, m); mk = emask(t); tt = D[t]['tte'][mk]; lo = np.maximum(p['lo'][mk], 0)
+                    p = preds(ds, t, scen, m); mk = emask(t); tt = D[t]['tte'][mk]; lo = np.maximum(p.get('lo', p['R'])[mk], 0)
                     hit = np.where(lo <= L)[0]; Tf = tfail(t)
                     if len(hit): trep = tt[hit[0]]; fail = trep > Tf; waste = max(Tf - trep, 0) / Tf
                     else: fail = True; waste = 0.0
@@ -127,7 +133,7 @@ def costrate(methods=('DE', 'DE+', 'CQR', 'CQR+', 'Wiener', 'WienerC', 'PF', 'PF
                 T_ = tags(ds)
                 for t in T_:
                     L = lead * np.mean([tfail(j) for j in T_ if j != t]); p = preds(ds, t, scen, m); mk = emask(t)
-                    tt = D[t]['tte'][mk]; lo = np.maximum(p['lo'][mk], 0); Tf = tfail(t); hit = np.where(lo <= L)[0]
+                    tt = D[t]['tte'][mk]; lo = np.maximum(p.get('lo', p['R'])[mk], 0); Tf = tfail(t); hit = np.where(lo <= L)[0]
                     fail = (len(hit) == 0) or tt[hit[0]] > Tf; u = Tf if fail else tt[hit[0]]
                     used += u; ideal += Tf
                     for r in ratios: cost[r] += r if fail else 1.0
