@@ -1,0 +1,78 @@
+PHM    SEQ+        nMAE=8.6 PICP=49.1 NMPIW=15.1 NIS=69.2 MAElate=106.4
+PHM    SEQ+CP      nMAE=8.6 PICP=99.4 NMPIW=251.5 NIS=251.6 MAElate=106.4
+PHM    SEQopt      nMAE=6.7 PICP=43.8 NMPIW=17.0 NIS=66.9 MAElate=64.6
+PHM    SEQoptCP    nMAE=6.7 PICP=61.8 NMPIW=36.3 NIS=74.3 MAElate=64.6
+PHM    SEQevopt    nMAE=8.0 PICP=41.2 NMPIW=17.8 NIS=84.3 MAElate=82.8
+PHM    SEQevoptCP  nMAE=8.0 PICP=92.3 NMPIW=70.3 NIS=73.5 MAElate=82.8
+PHM    DE+         nMAE=8.4 PICP=26.5 NMPIW=9.1 NIS=93.7 MAElate=96.0
+PHM    DE+CP       nMAE=8.4 PICP=62.9 NMPIW=38.7 NIS=100.4 MAElate=96.0
+PHM    CQR+        nMAE=7.3 PICP=92.8 NMPIW=39.4 NIS=45.6 MAElate=74.6
+PHM    StackCP     nMAE=5.6 PICP=91.7 NMPIW=28.2 NIS=32.5 MAElate=52.7
+PHM SEQopt selected configs: [6, 7]
+PHM SEQevopt selected configs: [7, 11]
+NUAA   SEQ+        nMAE=25.2 PICP=38.4 NMPIW=28.1 NIS=260.6 MAElate=121.0
+NUAA   SEQ+CP      nMAE=25.2 PICP=93.2 NMPIW=175.4 NIS=186.0 MAElate=121.0
+NUAA   SEQopt      nMAE=25.3 PICP=28.7 NMPIW=25.3 NIS=286.2 MAElate=114.9
+NUAA   SEQoptCP    nMAE=25.3 PICP=87.0 NMPIW=105.6 NIS=168.1 MAElate=114.9
+NUAA   SEQevopt    nMAE=27.6 PICP=26.1 NMPIW=24.8 NIS=334.7 MAElate=139.0
+NUAA   SEQevoptCP  nMAE=27.6 PICP=77.6 NMPIW=100.3 NIS=190.2 MAElate=139.0
+NUAA   DE+         nMAE=15.2 PICP=84.8 NMPIW=56.8 NIS=87.0 MAElate=89.4
+NUAA   DE+CP       nMAE=15.2 PICP=90.1 NMPIW=73.1 NIS=92.6 MAElate=89.4
+NUAA   CQR+        nMAE=17.4 PICP=95.6 NMPIW=113.4 NIS=119.2 MAElate=83.4
+NUAA   StackCP     nMAE=16.3 PICP=93.6 NMPIW=82.5 NIS=103.6 MAElate=65.3
+NUAA SEQopt selected configs: [0, 2, 5, 6, 7]
+NUAA SEQevopt selected configs: [0, 2, 5, 6, 7, 9]
+MILL   SEQ+        nMAE=31.3 PICP=31.7 NMPIW=29.7 NIS=386.6 MAElate=407.3
+MILL   SEQ+CP      nMAE=31.3 PICP=85.4 NMPIW=363.9 NIS=392.5 MAElate=407.3
+MILL   SEQopt      nMAE=24.7 PICP=86.7 NMPIW=73.3 NIS=112.5 MAElate=301.5
+MILL   SEQoptCP    nMAE=24.7 PICP=91.8 NMPIW=149.7 NIS=171.0 MAElate=301.5
+MILL   SEQevopt    nMAE=24.8 PICP=80.1 NMPIW=69.9 NIS=128.8 MAElate=303.1
+MILL   SEQevoptCP  nMAE=24.8 PICP=90.2 NMPIW=147.9 NIS=170.0 MAElate=303.1
+MILL   DE+         nMAE=29.7 PICP=70.6 NMPIW=63.9 NIS=178.8 MAElate=314.8
+MILL   DE+CP       nMAE=29.7 PICP=85.6 NMPIW=159.1 NIS=207.6 MAElate=314.8
+MILL   CQR+        nMAE=32.0 PICP=89.4 NMPIW=324.3 NIS=376.4 MAElate=311.1
+MILL   StackCP     nMAE=16.9 PICP=90.0 NMPIW=75.9 NIS=97.2 MAElate=165.5
+MILL SEQopt selected configs: [4]
+MILL SEQevopt selected configs: [4, 10]
+MATWI  SEQ+        nMAE=268.3 PICP=24.7 NMPIW=169.8 NIS=3993.6 MAElate=867.8
+MATWI  SEQ+CP      nMAE=268.3 PICP=89.0 NMPIW=9006.9 NIS=9088.9 MAElate=867.8
+MATWI  SEQopt      nMAE=202.2 PICP=30.9 NMPIW=263.0 NIS=1955.5 MAElate=757.3
+MATWI  SEQoptCP    nMAE=202.2 PICP=86.1 NMPIW=5113.7 NIS=5185.5 MAElate=757.3
+MATWI  SEQevopt    nMAE=201.1 PICP=35.4 NMPIW=276.9 NIS=1919.1 MAElate=707.4
+MATWI  SEQevoptCP  nMAE=201.1 PICP=82.2 NMPIW=4616.0 NIS=4711.4 MAElate=707.4
+MATWI  DE+         nMAE=90.9 PICP=51.0 NMPIW=192.5 NIS=650.9 MAElate=498.9
+MATWI  DE+CP       nMAE=90.9 PICP=92.0 NMPIW=1005.9 NIS=1036.9 MAElate=498.9
+MATWI  CQR+        nMAE=118.5 PICP=87.0 NMPIW=1844.0 NIS=1892.7 MAElate=576.5
+MATWI  StackCP     nMAE=58.0 PICP=88.8 NMPIW=567.1 NIS=606.7 MAElate=354.2
+MATWI SEQopt selected configs: [1, 3, 4, 7]
+MATWI SEQevopt selected configs: [1, 4, 7, 8, 12, 13]
+
+Proposed - SEQoptCP   NIS   mean   -1533.5 median    -81.2 p_vE 0.00002 wins 34/40
+Proposed - SEQoptCP   nMAE  mean     -51.9 median     -6.0 p_vE 0.02192 wins 24/40
+Proposed - SEQoptCP   late  mean     -54.9 median     -8.5 p_vE 0.00050 wins 29/40
+Proposed - SEQevoptCP NIS   mean   -1383.9 median    -80.0 p_vE 0.00001 wins 34/40
+Proposed - SEQevoptCP nMAE  mean     -52.1 median     -7.2 p_vE 0.01012 wins 25/40
+Proposed - SEQevoptCP late  mean     -54.7 median     -8.9 p_vE 0.00070 wins 29/40
+Proposed - SEQopt     NIS   mean    -487.8 median    -13.2 p_vE 0.02415 wins 24/40
+Proposed - SEQopt     nMAE  mean     -51.9 median     -6.0 p_vE 0.02192 wins 24/40
+Proposed - SEQopt     late  mean     -54.9 median     -8.5 p_vE 0.00050 wins 29/40
+Proposed - SEQevopt   NIS   mean    -494.3 median    -13.2 p_vE 0.02713 wins 24/40
+Proposed - SEQevopt   nMAE  mean     -52.1 median     -7.2 p_vE 0.01012 wins 25/40
+Proposed - SEQevopt   late  mean     -54.7 median     -8.9 p_vE 0.00070 wins 29/40
+
+cfg 0: {'fam': 'A', 'h': 128, 'nl': 1, 'drop': 0.0, 'noise': 0.1, 'lr': 0.001, 'ep': 300, 'tgt': 'lin'}
+cfg 1: {'fam': 'A', 'h': 64, 'nl': 2, 'drop': 0.0, 'noise': 0.3, 'lr': 0.003, 'ep': 600, 'tgt': 'log'}
+cfg 2: {'fam': 'A', 'h': 128, 'nl': 1, 'drop': 0.2, 'noise': 0.1, 'lr': 0.001, 'ep': 300, 'tgt': 'lin'}
+cfg 3: {'fam': 'A', 'h': 128, 'nl': 2, 'drop': 0.2, 'noise': 0.02, 'lr': 0.003, 'ep': 600, 'tgt': 'log'}
+cfg 4: {'fam': 'A', 'h': 32, 'nl': 2, 'drop': 0.2, 'noise': 0.3, 'lr': 0.003, 'ep': 300, 'tgt': 'lin'}
+cfg 5: {'fam': 'A', 'h': 64, 'nl': 1, 'drop': 0.0, 'noise': 0.02, 'lr': 0.001, 'ep': 600, 'tgt': 'log'}
+cfg 6: {'fam': 'A', 'h': 32, 'nl': 1, 'drop': 0.0, 'noise': 0.1, 'lr': 0.003, 'ep': 300, 'tgt': 'lin'}
+cfg 7: {'fam': 'A', 'h': 64, 'nl': 2, 'drop': 0.0, 'noise': 0.02, 'lr': 0.001, 'ep': 300, 'tgt': 'log'}
+cfg 8: {'fam': 'B', 'h': 32, 'nl': 1, 'drop': 0.2, 'noise': 0.02, 'lr': 0.003, 'ep': 300, 'tgt': 'log'}
+cfg 9: {'fam': 'B', 'h': 128, 'nl': 2, 'drop': 0.2, 'noise': 0.1, 'lr': 0.003, 'ep': 300, 'tgt': 'lin'}
+cfg 10: {'fam': 'B', 'h': 64, 'nl': 2, 'drop': 0.2, 'noise': 0.1, 'lr': 0.003, 'ep': 300, 'tgt': 'lin'}
+cfg 11: {'fam': 'B', 'h': 128, 'nl': 1, 'drop': 0.0, 'noise': 0.1, 'lr': 0.003, 'ep': 300, 'tgt': 'lin'}
+cfg 12: {'fam': 'B', 'h': 32, 'nl': 1, 'drop': 0.0, 'noise': 0.3, 'lr': 0.001, 'ep': 300, 'tgt': 'log'}
+cfg 13: {'fam': 'B', 'h': 64, 'nl': 1, 'drop': 0.2, 'noise': 0.1, 'lr': 0.001, 'ep': 300, 'tgt': 'log'}
+cfg 14: {'fam': 'B', 'h': 128, 'nl': 2, 'drop': 0.0, 'noise': 0.1, 'lr': 0.001, 'ep': 300, 'tgt': 'lin'}
+cfg 15: {'fam': 'B', 'h': 64, 'nl': 2, 'drop': 0.0, 'noise': 0.3, 'lr': 0.001, 'ep': 300, 'tgt': 'log'}
