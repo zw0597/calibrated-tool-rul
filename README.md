@@ -158,6 +158,10 @@ Copy the three `vstar_eval.pkl` files to `out/vstar_eval_A.pkl`, `out/vstar_eval
 
 Earlier `make_*_v4`…`v6` scripts produce the tables of previous manuscript versions and are kept for traceability.
 
+## 4g. Version 1.5.1
+
+* History-aware sequence baselines (Supplementary Section on sequence baselines): `v7_seq.py` (SEQ+), `v7_seqtune.py` (nested tuning of SEQ and SEQ-ev over 16 configurations, selection by inner interval score), `v7_seqtune_report.py`, table `make_tab_seq_v7.py`.
+
 ## 5. Code map
 
 | File | Content |
