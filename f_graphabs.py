@@ -37,5 +37,5 @@ ax.set_title(f'NASA milling tool {t} (unseen, longest life)',fontsize=9,loc='lef
 ax.legend(loc='upper right',bbox_to_anchor=(1.02,1.0),frameon=False,fontsize=7.6,handlelength=1.5)
 # key results
 ax0.text(11.05,4.15,'40 tools, 4 datasets\n(1 held out, published protocol)',fontsize=9.5,fontweight='bold',va='top',color=INK)
-ax0.text(11.05,3.45,'two-thirds or more of the\nnetwork error variance persists;\nvariance inflation predicts\ncoverage loss out of sample\n\ncalibrated coverage 89–94%\n\nstratified tests, 16 alternatives:\nlate-life error better than all;\ninterval score better than 14\n(not inspection-aware DE/QR)',fontsize=8.6,va='top',color='#333333',linespacing=1.35)
+ax0.text(11.05,3.45,'two-thirds or more of the\nnetwork error variance persists;\nvariance inflation predicts\ncoverage loss out of sample\n\ncalibrated coverage 89–94%\n\nvs 16 alternatives (stratified tests):\nlower late-life error than all,\nlower interval score than 14,\nlowest replacement cost',fontsize=8.6,va='top',color='#333333',linespacing=1.35)
 fig.savefig('figures/graphical_abstract.png',dpi=200); fig.savefig('figures/graphical_abstract.pdf')

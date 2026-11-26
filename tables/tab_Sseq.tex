@@ -1,0 +1,18 @@
+\begin{table}[!htbp]
+\centering
+\caption{History-aware sequence baselines (periodic inspections), each with the two-layer conformal step: SEQ (causal GRU over window statistics, condition, inspection features and elapsed time) and SEQ-ev (the same, with the deep evidence of the framework as additional inputs, i.e.\ a learned fusion), with configurations selected per outer fold by the inner interval score from 16 candidates. $n$MAE, PICP and NIS in \%.}
+\label{tab:Sseq}
+\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lccccccccc}
+\toprule
+ & \multicolumn{3}{c}{SEQ} & \multicolumn{3}{c}{SEQ-ev} & \multicolumn{3}{c}{Proposed}\\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-10}
+Dataset & $n$MAE & PICP & NIS & $n$MAE & PICP & NIS & $n$MAE & PICP & NIS\\
+\midrule
+PHM2010 & 6.7 & 61.8 & 74.3 & 8.0 & 92.3 & 73.5 & 5.6 & 91.7 & 32.5\\
+NUAA & 25.3 & 87.0 & 168.1 & 27.6 & 77.6 & 190.2 & 16.3 & 93.6 & 103.6\\
+NASA milling & 24.7 & 91.8 & 171.0 & 24.8 & 90.2 & 170.0 & 16.9 & 90.0 & 97.2\\
+MATWI & 202.2 & 86.1 & 5186 & 201.1 & 82.2 & 4711 & 58.0 & 88.8 & 606.7\\
+\bottomrule
+\end{tabular}
+\end{table}
