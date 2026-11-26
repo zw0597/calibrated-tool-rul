@@ -1,0 +1,21 @@
+\begin{table}[!htbp]
+\centering
+\caption{Robustness of the comparisons of Table~\ref{tab:signif} (proposed method $-$ alternative, periodic inspections, 40 tools): Hodges--Lehmann estimate (HL) and median of the per-tool differences, mean weighted by the number of evaluation windows ($w$-mean), and unadjusted van Elteren $p$-value without the 5 tools with fewer than five evaluation windows ($p_{\ge5}$). Negative values favour the proposed method.}
+\label{tab:Srobust}
+\scriptsize\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{lcccccccccccc}
+\toprule
+ & \multicolumn{4}{c}{$\Delta$NIS (pp)} & \multicolumn{4}{c}{$\Delta n$MAE (pp)} & \multicolumn{4}{c}{$\Delta$ late-life error (pp)}\\
+\cmidrule(lr){2-5}\cmidrule(lr){6-9}\cmidrule(lr){10-13}
+Alternative & HL & median & $w$-mean & $p_{\ge5}$ & HL & median & $w$-mean & $p_{\ge5}$ & HL & median & $w$-mean & $p_{\ge5}$\\
+\midrule
+DE+ & 5.5 & 18.1 & $-$62.1 & 0.185 & $-$5.4 & $-$2.3 & $-$1.6 & 0.077 & $-$6.7 & $-$3.1 & $-$5.4 & 0.003\\
+DE+CP & $-$83.9 & $-$66.0 & $-$43.7 & 0.017 & $-$5.4 & $-$2.3 & $-$1.6 & 0.077 & $-$6.7 & $-$3.1 & $-$5.4 & 0.003\\
+QR+ & $-$50.9 & $-$14.7 & $-$96.6 & 0.487 & $-$7.4 & $-$1.7 & $-$1.9 & 0.045 & $-$7.2 & $-$4.0 & $-$5.4 & $<$0.001\\
+CQR+ & $-$239 & $-$205 & $-$117 & $<$0.001 & $-$7.4 & $-$1.7 & $-$1.9 & 0.045 & $-$7.2 & $-$4.0 & $-$5.4 & $<$0.001\\
+Wiener-C & $-$564 & $-$76.7 & $-$834 & $<$0.001 & $-$5.6 & $-$5.5 & $-$6.0 & 0.151 & $-$5.9 & $-$4.1 & $-$8.9 & 0.002\\
+Wiener-AR & $-$1323 & $-$918 & $-$739 & $<$0.001 & $-$10.8 & $-$10.3 & $-$9.9 & 0.002 & $-$8.8 & $-$8.0 & $-$13.6 & 0.005\\
+Law & $-$80.8 & $-$39.1 & $-$119 & $<$0.001 & $-$8.8 & $-$6.8 & $-$13.9 & 0.008 & $-$11.0 & $-$8.0 & $-$19.2 & $<$0.001\\
+\bottomrule
+\end{tabular}
+\end{table}

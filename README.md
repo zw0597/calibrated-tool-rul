@@ -134,9 +134,29 @@ Copy the three `vstar_eval.pkl` files to `out/vstar_eval_A.pkl`, `out/vstar_eval
 * MATWI networks and evaluation: `NIS=2 QMAX=2 python run_nets.py MATWI outer|qens|inner|qensin`, `python baselines.py MATWI`, `python evalrul2.py MATWI` (per fold with `FOLDS`/`SUF`, merged by `v7_matwi_report.py merge`), `v7_matwi_deplus.py` (DE+/QR+), `v7_matwi_qrin.py` (CQR+), `v7_matwi_baselines.py` (Wiener-C, PF, PF-C, Wiener-Net).
 * Nested stacking with DE+: `v7_inner_fuse.py`, `v7_inner_de.py` / `v7_inner_de_matwi.py` (inner DE+), `v7_stack.py` -> `out/v7_stack.pkl`.
 * Over-confidence law (Theorem 1, Fig. 9): `v7_law.py`, `v7_law_ext.py`, `f9_law.py`.
-* MATWI V* = 120 µm sensitivity: `run_v120.sh` (separate work directory with `TH_MATWI=0.12`); results in `out/vstar120_rul*_MATWI.pkl`.
+* MATWI V* = 120 µm sensitivity: `run_v120.sh` (separate work directory with `TH_MATWI=0.12`); results in `out/vstar120_*.pkl`; `run_v120b.sh` adds DE+/QR+ and the nested stacking at this limit.
 * Review additions: `v7_deplus_cp.py` (DE+ with the two-layer conformal step), `v7_wiener_ar.py` (Wiener-Net with AR(1) bias state, conformalised), `v7_tests2.py` + `make_sig_v7b.py` (van Elteren tests stratified by dataset, Holm), `make_tab_stack_v7.py` (stacking weights).
 * Tables and figures of version 7: `make_tables_v7.py`, `make_sig_v7b.py`, `v7_decision.py`, `make_tab_data_v7.py`, `make_tab_Ssignif_ds_v7.py`, `f67_v7.py` (Figs. 6 and 7), `f_graphabs.py`.
+
+## 4f. Version 1.5 (seventh manuscript version, after the second independent review)
+
+* Causal inspections: `python causal_insp.py` (latest actual measurement at or before each inspection; needs the raw label files) and `python v7_causal.py`.
+* Calibrated ablations: `python v7_ablate_cp.py`; random-intercept and empirical-ACF versions of the variance-inflation diagnostic: `python v7_law_ri.py`.
+* Stacking control (QR+ stacked with DE+): `python v7_stack_ctrl.py`; cost rate with age replacement, inspection cost and bootstrap ratios, and late-life coverage: `python v7_decision2.py`; typical-tool statistics: `python v7_tests_robust.py`.
+
+### Map of the manuscript (version 7) to scripts
+
+| Output | Script |
+|---|---|
+| Main results (periodic and mount-only), ablation, parameter tables | `make_tables_v7.py` |
+| Stratified significance tests (main and mount-only) | `v7_tests2.py` then `make_sig_v7b.py` |
+| Replacement decisions and cost rate | `v7_decision.py`, `v7_decision2.py` |
+| Per-dataset tests (Supplementary) | `make_tab_Ssignif_ds_v7.py` |
+| Stacking weights (Supplementary) | `make_tab_stack_v7.py` |
+| Supplementary robustness tables | `make_tab_law_v7.py`, `v7_tests_robust.py`, `v7_decision2.py`, `make_tab_causal_v7.py`, `make_tab_decds_v7.py`, `make_tab_ablcp_v7.py` |
+| Fig. 1 / Figs. 6–7 / Fig. 9 / graphical abstract | `f1_framework.py` / `f67_v7.py` / `f9_law.py` / `f_graphabs.py` |
+
+Earlier `make_*_v4`…`v6` scripts produce the tables of previous manuscript versions and are kept for traceability.
 
 ## 5. Code map
 

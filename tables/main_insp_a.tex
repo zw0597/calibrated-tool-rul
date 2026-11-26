@@ -1,6 +1,6 @@
 \begin{table}[!tbp]
 \centering
-\caption{RUL prediction with periodic inspections (every 200 s for PHM2010 and 300 s for NUAA). Metrics are averaged over test tools; bold: best value per dataset and column (PICP and NMPIW excluded, since neither is a score on its own; LinEx excluded because of its divergent extrapolation). Proposed: framework stacked with DE+ (Section~\ref{sec:stack}) and calibrated; Framework alone: the unstacked framework ($a=1$). DE+, QR+: deep regressors that also receive the mounting wear and the inspections; DE+CP, CQR+: DE+ and QR+ with the two-layer conformal step; Wiener-AR: Wiener-Net with the AR(1) bias state of the error model and the two-layer conformal step; Wiener-C, PF-C: condition-dependent priors; Wiener-Net, PF-Net: network wear estimates treated as independent measurements; PF: particle filter with inspections only (Section~\ref{sec:baselines}). $^\dagger$Subsampled conformal step of Section~\ref{sec:conformal} (one random window per calibration tool, 400 draws), possible only for $m\ge9$ calibration tools. $^\ddagger$Framework with the QR+ ensemble as direct-RUL evidence (counts the inspections twice; not computed for MATWI).}
+\caption{RUL prediction with periodic inspections (every 200 s for PHM2010 and 300 s for NUAA). Metrics are averaged over test tools; bold: best value per dataset and column over all rows, the framework-alone ablation included (PICP and NMPIW excluded, since neither is a score on its own; LinEx excluded because of its divergent extrapolation). Proposed: framework stacked with DE+ (Section~\ref{sec:stack}) and calibrated; Framework alone: the unstacked framework ($a=1$). DE+, QR+: deep regressors that also receive the mounting wear and the inspections; DE+CP, CQR+: DE+ and QR+ with the two-layer conformal step; Wiener-AR: Wiener-Net with the AR(1) bias state of the error model and the two-layer conformal step; Wiener-C, PF-C: condition-dependent priors; Wiener-Net, PF-Net: network wear estimates treated as independent measurements; PF: particle filter with inspections only (Section~\ref{sec:baselines}). $^\dagger$Subsampled conformal step of Section~\ref{sec:conformal} (one random window per calibration tool, 400 draws), possible only for $m\ge9$ calibration tools. $^\ddagger$Framework with the QR+ ensemble as direct-RUL evidence (counts the inspections twice; not computed for MATWI). $^\S$Stacking control: QR+ in place of the framework in the nested stacking with DE+, with the same conformal step.}
 \label{tab:main_insp_a}
 \scriptsize\setlength{\tabcolsep}{4.5pt}\renewcommand{\arraystretch}{0.93}
 \begin{tabular}{lrrrrrrr}
@@ -26,6 +26,7 @@ PF & 8.46 & 104 & 72 & 0.89 & 70.5 & 21.1 & 39.6\\
 PF-C & 14.35 & 183 & 129 & 0.44 & 70.4 & 33.7 & 100.0\\
 PF-Net & 10.05 & 131 & 67 & 0.89 & 13.8 & 10.2 & 112.2\\
 Law & 15.16 & 188 & 127 & 0.44 & 94.7 & 61.4 & 68.6\\
+QR+ stacked with DE+$^\S$ & 7.74 & 90 & 81 & 0.89 & 74.7 & 25.5 & 50.2\\
 Framework alone, raw & 5.82 & 79 & \textbf{48} & \textbf{1.00} & 93.9 & 33.1 & 37.1\\
 Framework alone & 5.82 & 79 & \textbf{48} & \textbf{1.00} & 93.9 & 36.4 & 40.4\\
 Framework, QR+ evidence$^\ddagger$ & 6.56 & 88 & 63 & 0.89 & 92.4 & 58.3 & 63.6\\
@@ -51,6 +52,7 @@ PF & 62.32 & 882 & 934 & 0.30 & 87.5 & 1325.8 & 1418.1\\
 PF-C & 25.45 & 224 & 189 & 0.26 & 97.6 & 306.2 & 313.0\\
 PF-Net & 122.96 & 1365 & 1549 & 0.22 & 77.6 & 967.6 & 1873.8\\
 Law & 43.67 & 391 & 386 & 0.11 & 92.8 & 297.7 & 340.2\\
+QR+ stacked with DE+$^\S$ & 15.22 & 113 & 86 & 0.52 & 92.6 & 78.1 & 91.6\\
 Framework alone, raw & 27.28 & 224 & 75 & 0.33 & 86.9 & 94.9 & 141.5\\
 Framework alone & 27.28 & 224 & 75 & 0.33 & 92.4 & 115.7 & 147.4\\
 Framework, QR+ evidence$^\ddagger$ & 21.63 & 163 & 67 & 0.33 & 91.8 & 91.4 & 113.1\\

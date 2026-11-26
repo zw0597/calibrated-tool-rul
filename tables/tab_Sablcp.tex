@@ -1,0 +1,23 @@
+\begin{table}[!htbp]
+\centering
+\caption{Calibrated ablation (periodic inspections): each variant of the framework alone with its own two-layer conformal step, the scores computed from inner fusions of the same variant. PICP and NIS in \%; compare the raw intervals of Table~\ref{tab:ablation}.}
+\label{tab:Sablcp}
+\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lcccccccc}
+\toprule
+ & \multicolumn{2}{c}{PHM2010} & \multicolumn{2}{c}{NUAA} & \multicolumn{2}{c}{NASA milling} & \multicolumn{2}{c}{MATWI}\\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}
+Variant & PICP & NIS & PICP & NIS & PICP & NIS & PICP & NIS\\
+\midrule
+Framework alone (full) & 93.9 & 40.4 & 92.4 & 147.4 & 91.7 & 95.0 & 89.7 & 578.1\\
+\midrule
+w/o effective-age offset & 90.3 & 58.1 & 93.2 & 150.5 & 89.9 & 121.0 & 88.9 & 540.4\\
+w/o hypothesis averaging & 95.0 & 34.7 & 89.8 & 149.6 & 92.2 & 83.3 & 89.7 & 575.2\\
+w/o wear-increment evidence & 95.0 & 38.5 & 91.9 & 159.2 & 91.7 & 78.9 & 89.7 & 597.0\\
+w/o direct-RUL evidence & 89.3 & 104.7 & 89.1 & 423.5 & 91.7 & 109.8 & 90.7 & 1156.8\\
+w/o persistent bias ($\psi_s\to0.05$) & 89.3 & 44.2 & 85.6 & 214.1 & 94.4 & 98.0 & 88.9 & 624.8\\
+w/o model discrepancy $\delta$ & 86.4 & 63.3 & 84.6 & 559.2 & 89.0 & 218.3 & 87.0 & 1839.7\\
+single quantile network & 94.7 & 39.5 & 92.9 & 152.7 & 89.4 & 98.7 & 89.6 & 633.4\\
+\bottomrule
+\end{tabular}
+\end{table}

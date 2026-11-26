@@ -13,6 +13,10 @@ def agg(ds, scen, m):
     if m in ('Stack', 'StackCP'):
         per = [tool_metrics(t, ST[ds][t][scen][m]) for t in tags(ds)]
         return {k: np.nanmean([q[k] for q in per]) for k in per[0]}, per
+    if m == 'StackCtrlCP':
+        SC = pickle.load(open('out/v7_stack_ctrl.pkl', 'rb'))
+        per = [tool_metrics(t, SC[ds][t][scen]['StackCtrlCP']) for t in tags(ds)]
+        return {k: np.nanmean([q[k] for q in per]) for k in per[0]}, per
     if m in ('DE+CP', 'WienerAR', 'WienerARCP'):
         import v6_analysis as V
         per = [tool_metrics(t, V.preds(ds, t, scen, m)) for t in tags(ds)]
@@ -22,7 +26,7 @@ def agg(ds, scen, m):
 M.agg = agg
 NAMES = [('Pop', 'Pop'), ('DE', 'DE'), ('DE+', 'DE+'), ('DE+CP', 'DE+CP'), ('MCD', 'MCD'), ('CQRraw', 'QR'), ('QR+', 'QR+'), ('CQR', 'CQR'), ('CQR+', 'CQR+'),
          ('LinEx', 'LinEx'), ('Wiener', 'Wiener'), ('WienerC', 'Wiener-C'), ('WienerNetK', 'Wiener-Net'), ('WienerARCP', 'Wiener-AR'), ('PF', 'PF'), ('PFC', 'PF-C'), ('PFNet', 'PF-Net'),
-         ('MCprior', 'Law'), ('Ours', 'Framework alone, raw'), ('OursCP', 'Framework alone'), ('PlusCP', r'Framework, QR+ evidence$^\ddagger$'),
+         ('MCprior', 'Law'), ('StackCtrlCP', r'QR+ stacked with DE+$^\S$'), ('Ours', 'Framework alone, raw'), ('OursCP', 'Framework alone'), ('PlusCP', r'Framework, QR+ evidence$^\ddagger$'),
          ('Stack', 'Proposed, raw'), ('StackCP', r'\textbf{Proposed}')]
 fmt = M.fmt
 def main_table(scen, label, caption, dss, fs=True):
@@ -53,12 +57,12 @@ def main_table(scen, label, caption, dss, fs=True):
             L.append(' & '.join([r'Framework alone, subsampled CP$^\dagger$'] + [fmt(fsr[c], d) for c, d, how in cols]) + r'\\')
     L += [r'\bottomrule', r'\end{tabular}', r'\end{table}']
     open(f'tables/{label.split(":")[1]}.tex', 'w').write('\n'.join(L)); return R
-NOTE = (r'Metrics are averaged over test tools; bold: best value per dataset and column (PICP and NMPIW excluded, since neither is a score on its own; LinEx excluded because of its divergent extrapolation). '
+NOTE = (r'Metrics are averaged over test tools; bold: best value per dataset and column over all rows, the framework-alone ablation included (PICP and NMPIW excluded, since neither is a score on its own; LinEx excluded because of its divergent extrapolation). '
         r'Proposed: framework stacked with DE+ (Section~\ref{sec:stack}) and calibrated; Framework alone: the unstacked framework ($a=1$). '
         r'DE+, QR+: deep regressors that also receive the mounting wear and the inspections; DE+CP, CQR+: DE+ and QR+ with the two-layer conformal step; Wiener-AR: Wiener-Net with the AR(1) bias state of the error model and the two-layer conformal step; Wiener-C, PF-C: condition-dependent priors; '
         r'Wiener-Net, PF-Net: network wear estimates treated as independent measurements; PF: particle filter with inspections only (Section~\ref{sec:baselines}). '
         r'$^\dagger$Subsampled conformal step of Section~\ref{sec:conformal} (one random window per calibration tool, 400 draws), possible only for $m\ge9$ calibration tools. '
-        r'$^\ddagger$Framework with the QR+ ensemble as direct-RUL evidence (counts the inspections twice; not computed for MATWI).')
+        r'$^\ddagger$Framework with the QR+ ensemble as direct-RUL evidence (counts the inspections twice; not computed for MATWI). $^\S$Stacking control: QR+ in place of the framework in the nested stacking with DE+, with the same conformal step.')
 def ablation():
     V = [('Stack', 'Proposed: stacked with DE+, raw'), ('Ours', 'Framework alone ($a=1$), raw'),
          ('woShift', 'w/o effective-age offset ($\\epsilon\\equiv0$)'), ('woBank', 'w/o hypothesis averaging (single filter)'),

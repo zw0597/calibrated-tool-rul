@@ -1,0 +1,22 @@
+\begin{table}[!htbp]
+\centering
+\caption{Causal inspections (periodic scenario): every inspection reports the most recent actual wear measurement at or before its time (no interpolation towards later measurements, no smoothing; raw expert labels on MATWI, raw VB on NASA milling), plus the same instrument noise; the conformal step is re-estimated with causal inspections in the inner folds. Interpolated: inspections as in the main text. Framework alone (calibrated) and Law; $n$MAE, PICP and NIS in \%.}
+\label{tab:Scausal}
+\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llcccccc}
+\toprule
+ & & \multicolumn{3}{c}{Framework alone} & \multicolumn{3}{c}{Law}\\
+\cmidrule(lr){3-5}\cmidrule(lr){6-8}
+Dataset & Inspections & $n$MAE & PICP & NIS & $n$MAE & PICP & NIS\\
+\midrule
+PHM2010 & interpolated & 5.8 & 93.9 & 40.4 & 15.2 & 94.7 & 68.6\\
+ & causal & 5.8 & 92.8 & 44.3 & 15.7 & 92.9 & 69.5\\
+NUAA & interpolated & 27.3 & 92.4 & 147.4 & 43.7 & 92.8 & 340.2\\
+ & causal & 30.2 & 89.3 & 154.5 & 63.0 & 80.5 & 502.8\\
+NASA milling & interpolated & 17.6 & 91.7 & 95.0 & 18.0 & 96.1 & 95.8\\
+ & causal & 18.3 & 89.0 & 115.4 & 18.8 & 94.0 & 109.2\\
+MATWI & interpolated & 53.3 & 89.7 & 578.1 & 98.8 & 86.5 & 818.2\\
+ & causal & 54.9 & 89.7 & 578.9 & 101.4 & 86.4 & 820.7\\
+\bottomrule
+\end{tabular}
+\end{table}

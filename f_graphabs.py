@@ -36,6 +36,6 @@ ax.set_xlabel('cutting time (s)'); ax.set_ylabel('RUL (s)')
 ax.set_title(f'NASA milling tool {t} (unseen, longest life)',fontsize=9,loc='left',color=INK)
 ax.legend(loc='upper right',bbox_to_anchor=(1.02,1.0),frameon=False,fontsize=7.6,handlelength=1.5)
 # key results
-ax0.text(11.05,4.15,'40 tools, 4 datasets\n(1 frozen, protocol fixed in advance)',fontsize=9.5,fontweight='bold',va='top',color=INK)
-ax0.text(11.05,3.45,'two-thirds or more of the\nnetwork error variance persists;\nover-confidence law predicts\ncoverage loss out of sample\n\ncalibrated coverage 89–94%\n\nHolm-corrected, pooled:\ninterval score better than\n10 of 11 baselines;\nlate-life error better than all',fontsize=8.6,va='top',color='#333333',linespacing=1.35)
+ax0.text(11.05,4.15,'40 tools, 4 datasets\n(1 held out, published protocol)',fontsize=9.5,fontweight='bold',va='top',color=INK)
+ax0.text(11.05,3.45,'two-thirds or more of the\nnetwork error variance persists;\nvariance inflation predicts\ncoverage loss out of sample\n\ncalibrated coverage 89–94%\n\nstratified tests, 16 alternatives:\nlate-life error better than all;\ninterval score better than 14\n(not inspection-aware DE/QR)',fontsize=8.6,va='top',color='#333333',linespacing=1.35)
 fig.savefig('figures/graphical_abstract.png',dpi=200); fig.savefig('figures/graphical_abstract.pdf')

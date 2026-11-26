@@ -10,7 +10,7 @@ import matplotlib.gridspec as gs
 from matplotlib.colors import LogNorm
 from pipeline import tags
 DSC['MATWI'] = '#3d7a3a'; DNAME['MATWI'] = 'MATWI'
-C['Framework'] = '#7fb0d8'; C['Framework alone'] = '#7fb0d8'
+C['Framework'] = '#7fb0d8'; C['Framework alone'] = '#7fb0d8'; C['DE+CP'] = '#6b3a0a'
 DS = ['PHM', 'NUAA', 'MILL', 'MATWI']
 ST = pickle.load(open('out/v7_stack.pkl', 'rb'))
 @functools.lru_cache(None)
@@ -66,7 +66,7 @@ for j, ds in enumerate(DS):
     panel(ax, 'bcde'[j], x=-0.17)
 save(fig, 'fig6_tools')
 # ---------------- Fig. 7
-MS = [('DE', 'DE', 'o', True), ('DE+', 'DE+', 'o', False), ('MCD', 'MCD', 'v', True), ('CQRraw', 'QR', 'D', False), ('CQR', 'CQR', 'D', True), ('CQR+', 'CQR+', 'h', True),
+MS = [('DE', 'DE', 'o', True), ('DE+', 'DE+', 'o', False), ('DE+CP', 'DE+CP', 'p', True), ('MCD', 'MCD', 'v', True), ('CQRraw', 'QR', 'D', False), ('CQR', 'CQR', 'D', True), ('CQR+', 'CQR+', 'h', True),
       ('Wiener', 'Wiener', 's', True), ('MCprior', 'Law', 'P', True), ('OursCP', 'Framework alone', '*', False), ('Stack', 'Proposed-raw', '*', False), ('StackCP', 'Proposed', '*', True)]
 fig = plt.figure(figsize=(W2, 120 * MM)); G = gs.GridSpec(2, 4, figure=fig, wspace=0.36, hspace=0.5, top=0.92)
 XL = {'PHM': (5, 120, [5, 10, 20, 50, 100]), 'NUAA': (40, 700, [50, 100, 200, 500]), 'MILL': (40, 700, [50, 100, 200, 500]), 'MATWI': (100, 4000, [100, 300, 1000, 3000])}
@@ -81,7 +81,7 @@ for j, ds in enumerate(DS):
     ax.set_xlabel('NMPIW (% of life)', fontsize=6)
     if j == 0: ax.set_ylabel('Coverage PICP (%)')
     ax.set_title(DNAME[ds], loc='left', fontsize=6.2); panel(ax, 'abcd'[j], x=-0.25)
-    if j == 0: fig.legend(*ax.get_legend_handles_labels(), loc='lower center', bbox_to_anchor=(0.5, 0.945), ncol=11, fontsize=5.0, handletextpad=0.15, columnspacing=0.7)
+    if j == 0: fig.legend(*ax.get_legend_handles_labels(), loc='lower center', bbox_to_anchor=(0.5, 0.945), ncol=12, fontsize=4.8, handletextpad=0.15, columnspacing=0.7)
 ax = fig.add_subplot(G[1, :])
 for k, (m, nm, mk, fill) in enumerate([('DE', 'DE', 'o', True), ('DE+', 'DE+', 'o', False), ('CQR+', 'CQR+', 'h', True), ('Wiener', 'Wiener', 's', True), ('StackCP', 'Proposed', '*', True)]):
     v = np.array([tool_metrics(t, get(ds, t, m))['PICP'] for ds, t in tools]); x = np.arange(len(tools)) + (k - 2) * 0.15
